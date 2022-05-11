@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 
 import java.awt.BorderLayout;
+import listeners.MyWindowListener;
 
 public class MainGUIframe extends JFrame {
 
@@ -38,6 +39,9 @@ public class MainGUIframe extends JFrame {
 		// Postavljamo akciju pri zatvaranju prozora
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		//Dodavanje Window Listenera koji proverava da li korisnik sigurno zeli da zatvori aplikaciju
+		addWindowListener(new MyWindowListener());
+		
 		setLocationRelativeTo(null); // ovime je prozor po pokretanju aplikacije postavljen ne centar ekrana
 		// this.getContentPane().setBackground(Color.yellow); //postavljanje boje
 		// pozadine prozora na zutu

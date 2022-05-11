@@ -37,7 +37,7 @@ public class AddEmployeeDialog extends JDialog{
 	
 	public AddEmployeeDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
-		setSize(700,900);
+		setSize(700,600);
 		setLocationRelativeTo(parent);
 		
 		EmployeeInfoPanel addEmplDialogPanel=new EmployeeInfoPanel();
