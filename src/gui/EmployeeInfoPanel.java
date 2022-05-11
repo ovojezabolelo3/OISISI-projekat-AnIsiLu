@@ -54,6 +54,23 @@ public class EmployeeInfoPanel extends JPanel {
 		
 		JPanel panAdress=new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panAdress.setBackground(new Color(220,210,15));
+		JLabel lblAdress=new JLabel("Adresa:");
+		lblAdress.setPreferredSize(dimension);
+		JTextField txtAdress=new JTextField();
+		txtAdress.setBackground(Color.DARK_GRAY);
+		txtAdress.setName("txtAdresa");
+		txtAdress.addFocusListener(focusListener);
+		txtAdress.setPreferredSize(dimension);
+		panAdress.add(lblAdress);
+		panAdress.add(txtAdress);
+		
+		Box boxCenter=Box.createVerticalBox();
+		boxCenter.add(boxCenter.createVerticalStrut(20));
+		boxCenter.add(panLastName);
+		boxCenter.add(panFirstName);
+		boxCenter.add(panAdress);
+		boxCenter.add(boxCenter.createGlue());
+		add(boxCenter, BorderLayout.NORTH);
 
 		
 	}

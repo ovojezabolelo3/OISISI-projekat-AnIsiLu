@@ -51,6 +51,9 @@ public class MainGUIframe extends JFrame {
 		// Toolbar
 		JToolBar toolbar = new MyToolbar();
 		add(toolbar, BorderLayout.NORTH);
+		
+		
+		
 	}
 
 }

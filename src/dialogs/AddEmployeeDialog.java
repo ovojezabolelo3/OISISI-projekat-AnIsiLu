@@ -30,6 +30,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import gui.EmployeeInfoPanel;
+
 public class AddEmployeeDialog extends JDialog{
 	private static final long serialVersionUID = 3591599721565020284L;
 	
@@ -38,7 +40,9 @@ public class AddEmployeeDialog extends JDialog{
 		setSize(700,900);
 		setLocationRelativeTo(parent);
 		
-		
+		EmployeeInfoPanel addEmplDialogPanel=new EmployeeInfoPanel();
+		addEmplDialogPanel.setBackground(Color.white);
+		this.add(addEmplDialogPanel);		
 		
 	}
 
