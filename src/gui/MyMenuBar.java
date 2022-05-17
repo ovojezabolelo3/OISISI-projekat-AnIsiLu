@@ -20,34 +20,6 @@ public class MyMenuBar extends JMenuBar{
 	
 	private static final long serialVersionUID = -7863806568418316202L;
 	
-//	public MyMenuBar() {
-//		
-//		JMenu file=new JMenu("File");
-//		JMenu fileNew=new JMenu("New");
-//		JMenuItem fileNewEmployee=new JMenuItem("Employee", new ImageIcon("images/icons8-hardworking-64.png"));
-//		JMenuItem fileNewSoftware=new JMenuItem("Software", new ImageIcon("images/icons8-software-64.png"));
-//		fileNew.add(fileNewEmployee);
-//		fileNew.addSeparator();
-//		fileNew.add(fileNewSoftware);
-//		
-//		JMenuItem fileOpen=new JMenuItem("Open");
-//		JMenuItem fileClose=new JMenuItem("Close");
-//		
-//		file.add(fileNew);
-//		file.addSeparator();
-//		file.add(fileOpen);
-//		file.addSeparator();
-//		file.add(fileClose);
-//		file.addSeparator();
-//		
-//		JMenu help=new JMenu("Help");
-//		JMenuItem helpAbout =new JMenuItem("About", new ImageIcon("images/icons8-more-info-64.png"));
-//		help.add(helpAbout);
-//		
-//	}
-//
-//}
-	
 	public MyMenuBar() {
 		JMenu file=new JMenu("File");
 		JMenu fileNew=new JMenu("New");

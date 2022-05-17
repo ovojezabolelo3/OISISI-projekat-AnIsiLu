@@ -18,12 +18,12 @@ public abstract class EmployeeInfoFocusListener implements FocusListener {
 	@Override
 	public void focusLost(FocusEvent arg0) {
 		JTextField txtJField=(JTextField) arg0.getComponent();
-		txtJField.setBackground(Color.DARK_GRAY);
+		txtJField.setBackground(Color.GRAY);
 		
-		//POLJE PREZIME JE OBAVEZNO ZA UNOS
-		if (txtJField.getName().equals("txtPrezime")) {
-			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Unesite prezime...")) {
-				txtJField.setText("Unesite prezime...");
+		//POLJE LAST NAME JE OBAVEZNO ZA UNOS
+		if (txtJField.getName().equals("txtLastName")) {
+			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Enter Last name")) {
+				txtJField.setText("Enter Last name");
 				txtJField.requestFocus();
 				txtJField.setForeground(Color.RED);
 			}else {
@@ -31,6 +31,51 @@ public abstract class EmployeeInfoFocusListener implements FocusListener {
 			}
 			
 		}
+		
+		
+//		//POLJE FIRST NAME JE OBAVEZNO ZA UNOS
+//		if (txtJField.getName().equals("txtFirstName")) {
+//			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Enter First name")) {
+//				txtJField.setText("Enter First name");
+//				txtJField.requestFocus();
+//				txtJField.setForeground(Color.RED);
+//			}else {
+//				txtJField.setForeground(Color.BLACK);
+//			}
+//			
+//		}
+		
+		
+		
+		//POLJE DATE OF BIRTH JE OBAVEZNO ZA UNOS
+//		if (txtJField.getName().equals("txtDateOfBirth")) {
+//			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Enter Date of birth")) {
+//				txtJField.setText("Enter Date of Birth");
+//				txtJField.requestFocus();
+//				txtJField.setForeground(Color.RED);
+//			}else {
+//				txtJField.setForeground(Color.BLACK);
+//			}
+//			
+//		}
+		
+		
+		
+		
+//		//POLJE JMBG JE OBAVEZNO ZA UNOS
+//		if (txtJField.getName().equals("txtJMBG")) {
+//			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Enter JMBG")) {
+//				txtJField.setText("Enter JMBG");
+//				txtJField.requestFocus();
+//				txtJField.setForeground(Color.RED);
+//			}else {
+//				txtJField.setForeground(Color.BLACK);
+//			}
+//			
+//		}
+		
+		
+		
 	}
 
 }
