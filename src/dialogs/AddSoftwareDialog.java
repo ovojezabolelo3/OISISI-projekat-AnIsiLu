@@ -22,6 +22,9 @@ import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JSplitPane;
 import javax.swing.WindowConstants;
+
+import gui.SoftwareInfoPanel;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -30,14 +33,20 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import gui.SoftwareInfoPanel;
+
 public class AddSoftwareDialog extends JDialog {
 	
 	private static final long serialVersionUID = 3591599721565020284L;
 	
 	public AddSoftwareDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
-		setSize(700,900);
+		setSize(700,600);
 		setLocationRelativeTo(parent);
+		
+		SoftwareInfoPanel addSoftwareDialogPanel=new SoftwareInfoPanel();
+		addSoftwareDialogPanel.setBackground(Color.white);
+		this.add(addSoftwareDialogPanel);
 
 		
 		
