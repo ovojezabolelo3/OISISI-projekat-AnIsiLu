@@ -2,14 +2,21 @@ package gui;
 
 
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.PublicKey;
 
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.UIManager;
+
 
 import dialogs.AddEmployeeDialog;
 import dialogs.AddSoftwareDialog;
@@ -21,15 +28,37 @@ public class MyMenuBar extends JMenuBar{
 	private static final long serialVersionUID = -7863806568418316202L;
 	
 	public MyMenuBar() {
+		//Izmene UI-a preko UIManager-a
+		UIManager uiMenuBar=new UIManager();
+		uiMenuBar.put("MenuBar.background", new Color(61,61,61));
+		uiMenuBar.put("Menu.background", new Color(61,61,61));
+		uiMenuBar.put("MenuItem.background", new Color(61,61,61));
+		
+		
+		uiMenuBar.put("MenuItem.selectionBackground", new Color(38,38,38));
+		uiMenuBar.put("MenuItem.selectionForeground", Color.WHITE);
+		uiMenuBar.put("Menu.selectionBackground", new Color(38,38,38));
+		uiMenuBar.put("Menu.selectionForeground", Color.WHITE);
+		uiMenuBar.put("MenuBar.selectionBackground", new Color(38,38,38));
+		uiMenuBar.put("MenuBar.selectionForeground", Color.WHITE);
+		
+		
+		
 		JMenu file=new JMenu("File");
+		file.setForeground(Color.WHITE);//boja teksta file u menibaru ce biti bela
+		
 		JMenu fileNew=new JMenu("New");
-		fileNew.setIcon(new ImageIcon("images/icons8-add-new-64.png"));
+		fileNew.setIcon(new ImageIcon("images/icons8-plus-+-24.png"));
+		fileNew.setForeground(Color.WHITE);
 		//dodavanje ActionListener-a///////////////////////
 		//fileNew.addActionListener(new MyActionListener1());
 		add(fileNew);
 		/////////////////////////////////////////////
 		
-		JMenuItem fileNewEmployee=new JMenuItem("Employee", new ImageIcon("images/icons8-hardworking-64.png"));
+		
+		JMenuItem fileNewEmployee=new JMenuItem("Employee", new ImageIcon("images/icons8-add-user-male-24.png"));
+		fileNewEmployee.setForeground(Color.WHITE);
+		
 		fileNewEmployee.addActionListener(new ActionListener() {
 			
 			@Override
@@ -40,7 +69,8 @@ public class MyMenuBar extends JMenuBar{
 			}
 		});
 		
-		JMenuItem fileNewSoftware=new JMenuItem("Software", new ImageIcon("images/icons8-software-64.png"));
+		JMenuItem fileNewSoftware=new JMenuItem("Software", new ImageIcon("images/icons8-google-code-24.png"));
+		fileNewSoftware.setForeground(Color.WHITE);
 		fileNewSoftware.addActionListener(new ActionListener() {
 			
 			@Override
@@ -57,8 +87,10 @@ public class MyMenuBar extends JMenuBar{
 		fileNew.addSeparator();
 		fileNew.add(fileNewSoftware);
 		
-		JMenuItem fileOpen=new JMenuItem("Open", new ImageIcon("images/icons8-opened-folder-64.png"));
-		JMenuItem fileClose=new JMenuItem("Close", new ImageIcon("images/icons8-close-64.png"));
+		JMenuItem fileOpen=new JMenuItem("Open", new ImageIcon("images/icons8-opened-folder-24.png"));
+		fileOpen.setForeground(Color.WHITE);
+		JMenuItem fileClose=new JMenuItem("Close", new ImageIcon("images/icons8-unavailable-24.png"));
+		fileClose.setForeground(Color.WHITE);
 		
 		file.add(fileNew);
 		file.addSeparator();
@@ -69,8 +101,11 @@ public class MyMenuBar extends JMenuBar{
 
 		
 		JMenu edit=new JMenu("Edit");
-		JMenuItem editEdit=new JMenuItem("Edit", new ImageIcon("images/icons8-edit-property-64.png"));
-		JMenuItem editDelete = new JMenuItem("Delete", new ImageIcon("images/icons8-remove-64.png"));
+		edit.setForeground(Color.WHITE);
+		JMenuItem editEdit=new JMenuItem("Edit", new ImageIcon("images/icons8-ball-point-pen-24.png"));
+		editEdit.setForeground(Color.WHITE);
+		JMenuItem editDelete = new JMenuItem("Delete", new ImageIcon("images/icons8-unavailable-24.png"));
+		editDelete.setForeground(Color.WHITE);
 		
 		edit.add(editEdit);
 		edit.addSeparator();
@@ -78,8 +113,9 @@ public class MyMenuBar extends JMenuBar{
 		
 		
 		JMenu help = new JMenu("Help");
-		
-		JMenuItem helpAbout = new JMenuItem("About", new ImageIcon("images/icons8-more-info-64.png"));
+		help.setForeground(Color.WHITE);
+		JMenuItem helpAbout = new JMenuItem("About", new ImageIcon("images/icons8-about-24.png"));
+		helpAbout.setForeground(Color.WHITE);
 		
 		help.add(helpAbout);
 
@@ -88,5 +124,23 @@ public class MyMenuBar extends JMenuBar{
 		add(edit);
 		add(help);
 	}
-
+	
+	///////////////////Da meni bude DARK GRAY/////////////////
+//	Color bgColor=Color.DARK_GRAY;
+//	public void setColor(Color color) {
+//		bgColor=color;
+//	}
+//	@Override
+//	protected void paintComponent(Graphics g) {
+//		super.paintComponent(g);
+//		Graphics2D graphics2d=(Graphics2D) g;
+//		graphics2d.setColor(bgColor);
+//		graphics2d.fillRect(0, 0, getWidth(), getHeight());
+//	}
+	
+	
 }
+
+
+
+

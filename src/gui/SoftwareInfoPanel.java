@@ -18,6 +18,15 @@ import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
+
+//ovo treba zbog oogucavanja dodavanja fajla korisniku
+import java.awt.*;
+import java.awt.event.*;
+import java.io.File;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+///////////////////////////////////////////////////////
+
 public class SoftwareInfoPanel extends JPanel {
 	public SoftwareInfoPanel() {
 		super(new BorderLayout());
@@ -26,12 +35,33 @@ public class SoftwareInfoPanel extends JPanel {
 		
 		Dimension dimension=new Dimension(120,20);
 		
-		JPanel panSoftwareName= new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panSoftwareName.setBackground(new Color(229,230,249));
+		JPanel panSoftName=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		panSoftName.setBackground(new Color(229,230,249));
+		JLabel lblSoftName=new JLabel("Software:");
+		lblSoftName.setPreferredSize(dimension);
 		
-		JLabel lblSoftwareName=new JLabel("Software:");
-		lblSoftwareName.setPreferredSize(dimension);
+		panSoftName.add(lblSoftName, BorderLayout.WEST);
 		
-		panSoftwareName.add(lblSoftwareName);
+		
+		////////////Ubacivanje fajla //////////////////
+		JButton addFileButton=new JButton("Add File");
+		addFileButton.setBounds(150,310,100,40);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		Box boxSoftwareInfo=Box.createVerticalBox();
+		boxSoftwareInfo.add(panSoftName);
+		add(boxSoftwareInfo, BorderLayout.CENTER);
+		
+		
+		
 	}
 }

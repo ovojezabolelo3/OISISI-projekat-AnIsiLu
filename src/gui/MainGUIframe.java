@@ -54,9 +54,14 @@ public class MainGUIframe extends JFrame {
 
 		// Toolbar
 		JToolBar toolbar = new MyToolbar();
-		add(toolbar, BorderLayout.NORTH);
+		toolbar.setBackground(new Color(61,61,61));
+		this.add(toolbar, BorderLayout.NORTH);
 		
+		//Statusbar
+		MyStatusbar statusbar=new MyStatusbar();
+		add(statusbar, BorderLayout.SOUTH);
 		
+		getContentPane().setBackground(new Color(61,61,61));
 		
 	}
 

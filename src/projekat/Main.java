@@ -1,5 +1,8 @@
 package projekat;
 
+import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 
 import gui.MainGUIframe;
@@ -13,6 +16,8 @@ public class Main {
 
 		JFrame Mainframe = new MainGUIframe();
 		Mainframe.setVisible(true);
+		
+		
 	}
 
 }
