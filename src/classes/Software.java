@@ -1,9 +1,14 @@
 package classes;
 
-public class Software {
-String softwareName, fileFormat, animationTools, modifiers;
+import java.io.Serializable;
 
-Software(String softwareName,String fileFormat, String animationTools , String modifiers)
+public class Software implements Serializable{
+	
+	//promenljive
+private String softwareName, fileFormat, animationTools, modifiers;
+
+//konkstruktori
+public Software(String softwareName,String fileFormat, String animationTools , String modifiers)
 {
 this.softwareName = softwareName;
 this.fileFormat = fileFormat;
@@ -18,4 +23,45 @@ this.modifiers = modifiers;
 }
 
 //ukljuciti render i cetkice
+
+public Software(){}
+
+//metode
+public String getSoftwareName() {
+	return softwareName;
+}
+
+public void setSoftwareName(String softwareName) {
+	this.softwareName = softwareName;
+}
+
+public String getFileFormat() {
+	return fileFormat;
+}
+
+public void setFileFormat(String fileFormat) {
+	this.fileFormat = fileFormat;
+}
+
+public String getAnimationTools() {
+	return animationTools;
+}
+
+public void setAnimationTools(String animationTools) {
+	this.animationTools = animationTools;
+}
+
+public String getModifiers() {
+	return modifiers;
+}
+
+public void setModifiers(String modifiers) {
+	this.modifiers = modifiers;
+}
+
+@Override
+public String toString() {
+	return softwareName + "," + fileFormat + "," + animationTools + "," + modifiers;
+}
+
 }

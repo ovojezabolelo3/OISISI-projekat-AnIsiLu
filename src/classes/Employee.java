@@ -1,14 +1,14 @@
 package classes;
 
-//import javax.swing.text.StyledEditorKit.ForegroundAction;
+import java.io.Serializable;
 
-//import classes.Adress;
-
-public class Employee {
-String name, surname;
-int jmbg;
-int dateOfBirth;
-String email;
+public class Employee implements Serializable{
+	
+	//promenljive
+private String name, surname;
+private int jmbg;
+private int dateOfBirth;
+private String email;
 
 public Employee(String name, String surname, int jmbg, int dateOfBirth, String email) {
 	this.name = name;
@@ -27,5 +27,53 @@ public Employee(String name, String surname, int jmbg, int dateOfBirth, String e
 //	}
 
 //napravi neku petlju da proverava da li su uneti brojevi/slova u polja kad se pravi novi zaposleni 
+
+public Employee(){}
+
+//metode
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public String getSurname() {
+	return surname;
+}
+
+public void setSurname(String surname) {
+	this.surname = surname;
+}
+
+public int getJmbg() {
+	return jmbg;
+}
+
+public void setJmbg(int jmbg) {
+	this.jmbg = jmbg;
+}
+
+public int getDateOfBirth() {
+	return dateOfBirth;
+}
+
+public void setDateOfBirth(int dateOfBirth) {
+	this.dateOfBirth = dateOfBirth;
+}
+
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
+@Override
+public String toString() {
+	return name + "," + surname + "," + jmbg + "," + dateOfBirth +","+ email ;
+}
 
 }

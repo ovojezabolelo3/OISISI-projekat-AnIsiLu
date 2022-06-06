@@ -1,24 +1,54 @@
 package classes;
 
-//import javax.swing.plaf.basic.BasicInternalFrameTitlePane.IconifyAction;
+import java.io.Serializable;
 
-public class Adress {
+public class Adress implements Serializable{ //koristi se da bi se cuvale informacije
 	
-int streetNumber;
-String streetName;
-String townName;
+	//promenljive
+private String streetNumber;
+private String streetName;
+private String townName;
 //String contry;
 
-Adress(String townName,String streetName , int streetNumber)
+//konstruktori
+public Adress(String townName,String streetName , String streetNumber)
 	{
     this.townName = townName;
     this.streetName = streetName;
     this.streetNumber = streetNumber;
-
-  //if(townName) -> ako ime grada i ulice nisu stringovi izbaci gresku
-  //ako broj ulice nije broj izbaci gresku 
-    //ovo treba da se proveri pre izjednacavanja
     
 	}
+
+public Adress(){}
+
+//metode
+public String getStreetNumber() {
+	return streetNumber;
+}
+
+public void setStreetNumber(String streetNumber) {
+	this.streetNumber = streetNumber;
+}
+
+public String getStreetName() {
+	return streetName;
+}
+
+public void setStreetName(String streetName) {
+	this.streetName = streetName;
+}
+
+public String getTownName() {
+	return townName;
+}
+
+public void setTownName(String townName) {
+	this.townName = townName;
+}
+
+@Override
+public String toString() {
+	return streetName + "," + streetNumber + "," + townName;
+}
 
 }
