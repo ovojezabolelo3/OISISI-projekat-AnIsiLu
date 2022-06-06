@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
+//import java.awt.GridLayout;
 
 import javax.sound.sampled.BooleanControl;
 import javax.swing.Box;
@@ -15,27 +15,29 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
+
 
 import javax.swing.JCheckBox;	//za dodavanje checkbox-a
 
 import listeners.EmployeeInfoFocusListener;
 
 public class EmployeeInfoPanel extends JPanel {
+	
+	private Color bg_color=new Color(61,61,61);
+	
 	public EmployeeInfoPanel() {
 		super(new BorderLayout());
-		setBorder(new TitledBorder(new EtchedBorder(), "Employee info"));
-		setBackground(new Color(150, 150, 20));
+		setBackground(bg_color);
 
 		Dimension dimension = new Dimension(120, 20);
 		EmployeeInfoFocusListener focusListener = new EmployeeInfoFocusListener() {
 		};
 
 		JPanel panLastName = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panLastName.setBackground(new Color(229, 230, 249));
+		panLastName.setBackground(bg_color);
 
 		JLabel lblLastName = new JLabel("Last name*:");
+		lblLastName.setForeground(Color.white);
 		lblLastName.setPreferredSize(dimension);
 		JTextField txtLastName = new JTextField(15);
 		txtLastName.setPreferredSize(dimension);
@@ -55,8 +57,9 @@ public class EmployeeInfoPanel extends JPanel {
 		
 		
 		JPanel panFirstName = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panFirstName.setBackground(new Color(229, 230, 249));
-		JLabel lblFirstName = new JLabel("First name*:");
+		panFirstName.setBackground(bg_color);
+		JLabel lblFirstName = new JLabel("First name:");
+		lblFirstName.setForeground(Color.white);
 		lblFirstName.setPreferredSize(dimension);
 		JTextField txtFirstName = new JTextField(10);
 		txtFirstName.setBackground(Color.GRAY);
@@ -70,8 +73,9 @@ public class EmployeeInfoPanel extends JPanel {
 		panFirstName.add(txtFirstName);
 
 		JPanel panAdress = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panAdress.setBackground(new Color(229, 230, 249));
+		panAdress.setBackground(bg_color);
 		JLabel lblAdress = new JLabel("Adress:");
+		lblAdress.setForeground(Color.white);
 		lblAdress.setPreferredSize(dimension);
 		JTextField txtAdress = new JTextField(20); // Proveriti da li treba ipak 3 JTextField-a za unos adrese
 		txtAdress.setBackground(Color.GRAY);
@@ -82,9 +86,10 @@ public class EmployeeInfoPanel extends JPanel {
 		panAdress.add(txtAdress);
 
 		JPanel panDateOfBirth = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panDateOfBirth.setBackground(new Color(229, 230, 249));
-		JLabel lblDateofBirth = new JLabel("Date of birth*:");
+		panDateOfBirth.setBackground(bg_color);
+		JLabel lblDateofBirth = new JLabel("Date of birth:");
 		lblDateofBirth.setPreferredSize(dimension);
+		lblDateofBirth.setForeground(Color.white);
 		JTextField txtDateOfBirth = new JTextField();
 		txtDateOfBirth.setBackground(Color.GRAY);
 		txtDateOfBirth.setName("txtDateOfBirth");
@@ -95,8 +100,9 @@ public class EmployeeInfoPanel extends JPanel {
 		panDateOfBirth.add(txtDateOfBirth);
 
 		JPanel panJMBG = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panJMBG.setBackground(new Color(229, 230, 249));
-		JLabel lblJMBG = new JLabel("JMBG*:");
+		panJMBG.setBackground(bg_color);
+		JLabel lblJMBG = new JLabel("JMBG:");
+		lblJMBG.setForeground(Color.white);
 		lblJMBG.setPreferredSize(dimension);
 		JTextField txtJMBG = new JTextField(13);
 		txtJMBG.setBackground(Color.GRAY);
@@ -108,8 +114,9 @@ public class EmployeeInfoPanel extends JPanel {
 		panJMBG.add(txtJMBG);
 		
 		JPanel panJobPosition=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panJobPosition.setBackground(new Color(229, 230, 249));
+		panJobPosition.setBackground(bg_color);
 		JLabel lblJobPosition= new JLabel("Job position:");
+		lblJobPosition.setForeground(Color.white);
 		lblJobPosition.setPreferredSize(dimension);
 		
 		panJobPosition.add(lblJobPosition);
@@ -121,41 +128,25 @@ public class EmployeeInfoPanel extends JPanel {
 		final JComboBox<String> cBox=new JComboBox<String>(choices);
 		cBox.setMaximumSize(cBox.getPreferredSize());
 		cBox.setAlignmentX(Component.CENTER_ALIGNMENT);
+		cBox.setBackground(bg_color);
+		cBox.setForeground(Color.white);
 		panJobPosition.add(cBox);
 		
-		
-		////////////////////////////IKONICAAAAAAA//////////////////////////
-		JPanel panIconEmployee= new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panIconEmployee.setBackground(Color.YELLOW);
-		JLabel lblIconEmployee=new JLabel();
-		lblIconEmployee.setIcon(new ImageIcon("images/icons8-hardworking-96.png"));
-		panIconEmployee.add(lblIconEmployee);
 
 		Box boxEmployeeInfo = Box.createVerticalBox();
-		//boxCenter.add(Box.createVerticalStrut(20));
 		boxEmployeeInfo.add(panLastName);
 		boxEmployeeInfo.add(panFirstName);
 		boxEmployeeInfo.add(panDateOfBirth);
 		boxEmployeeInfo.add(panJMBG);
 		boxEmployeeInfo.add(panAdress);
 		boxEmployeeInfo.add(panJobPosition);
-		//boxCenter.add(Box.createGlue());
 		add(boxEmployeeInfo, BorderLayout.CENTER);
 		
-//		Box boxIcon=Box.createVerticalBox();
-//		boxIcon.add(Box.createVerticalStrut(20));
-//		boxIcon.add(Box.createHorizontalGlue());
-//		boxIcon.add(panIconEmployee);
-//		add(boxIcon, BorderLayout.WEST);
-		
-//		JPanel panEmptyCenter=new JPanel(new FlowLayout(FlowLayout.CENTER));
-//		panEmptyCenter.setBackground(Color.BLACK);
-//		panEmptyCenter.setPreferredSize(getPreferredSize());
+
 		
 		JPanel panOKCancel=new JPanel();
-		panOKCancel.setBackground(Color.WHITE);
+		panOKCancel.setBackground(Color.gray);
 		panOKCancel.setPreferredSize(new Dimension(30,60));
-		//panEmptyDown.setLayout(new GridLayout(1,2,400,10));
 		
 		
 		JButton btnOK=new JButton("OK");
@@ -165,31 +156,37 @@ public class EmployeeInfoPanel extends JPanel {
 		panOKCancel.add(btnOK);
 		panOKCancel.add(btnCancel);
 		
-//		Box boxCenter=Box.createVerticalBox();
-//		//boxCenter.add(Box.createVerticalStrut(20));
-//		boxCenter.add(panEmptyCenter);
-//		boxCenter.add(Box.createGlue());
-//		add(boxCenter, BorderLayout.CENTER);
-		
+
 		
 		//////////SOFTWARE deo///////////////
 		JPanel panSoftwareCheck=new JPanel();
-		panSoftwareCheck.setBackground(Color.GRAY);
+		panSoftwareCheck.setBackground(bg_color);
 		JLabel lblSoftware=new JLabel("Software");
+		lblSoftware.setForeground(Color.white);
 		lblSoftware.setPreferredSize(dimension);
 		panSoftwareCheck.add(lblSoftware);
 		
 		
 		///////////////////CHECKBOX////////////////
 		JCheckBox checkBox1=new JCheckBox("3ds Max");
+		checkBox1.setBackground(bg_color);
+		checkBox1.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox1);
 		JCheckBox checkBox2=new JCheckBox("Maya");
+		checkBox2.setBackground(bg_color);
+		checkBox2.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox2);
 		JCheckBox checkBox3=new JCheckBox("Blender");
+		checkBox3.setBackground(bg_color);
+		checkBox3.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox3);
 		JCheckBox checkBox4=new JCheckBox("ZBrush");
+		checkBox4.setBackground(bg_color);
+		checkBox4.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox4);
 		JCheckBox checkBox5=new JCheckBox("Photoshop");
+		checkBox5.setBackground(bg_color);
+		checkBox5.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox5);
 		/////////////////////////////////////////////////
 		

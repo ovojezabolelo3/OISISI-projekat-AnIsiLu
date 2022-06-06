@@ -29,6 +29,7 @@ public class MainGUIframe extends JFrame {
 		Dimension screenSize = kit.getScreenSize();
 		int screenHeight = screenSize.height;
 		int screenWidth = screenSize.width;
+		setResizable(false);
 		// Podesavamo dimenzije prozora na 3/4 sirine i visine ekrana
 		setSize(3 * screenWidth / 4, 3 * screenHeight / 4);
 		// Dodajemo ikonu
@@ -42,7 +43,7 @@ public class MainGUIframe extends JFrame {
 		//Dodavanje Window Listenera koji proverava da li korisnik sigurno zeli da zatvori aplikaciju
 		addWindowListener(new MyWindowListener());
 		
-		setLocationRelativeTo(null); // ovime je prozor po pokretanju aplikacije postavljen ne centar ekrana
+		setLocationRelativeTo(null); // ovime je prozor po pokretanju aplikacije postavljen na centar ekrana
 		// this.getContentPane().setBackground(Color.yellow); //postavljanje boje
 		// pozadine prozora na zutu
 		// this.getContentPane().setBackground(new Color(84,106,123)); //ovako moze da

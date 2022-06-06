@@ -41,12 +41,14 @@ public class AddSoftwareDialog extends JDialog {
 	
 	public AddSoftwareDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
-		setSize(700,600);
+		setSize(800,600);
 		setLocationRelativeTo(parent);
+		setResizable(false);
 		
 		SoftwareInfoPanel addSoftwareDialogPanel=new SoftwareInfoPanel();
-		addSoftwareDialogPanel.setBackground(Color.white);
+		addSoftwareDialogPanel.setBackground(new Color(61,61,61));
 		this.add(addSoftwareDialogPanel);
+		
 
 		
 		
