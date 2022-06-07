@@ -41,7 +41,7 @@ public class AddSoftwareDialog extends JDialog {
 	
 	public AddSoftwareDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
-		setSize(800,600);
+		setSize(750,400);
 		setLocationRelativeTo(parent);
 		setResizable(false);
 		

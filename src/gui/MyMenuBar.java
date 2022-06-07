@@ -87,8 +87,41 @@ public class MyMenuBar extends JMenuBar{
 		fileNew.addSeparator();
 		fileNew.add(fileNewSoftware);
 		
-		JMenuItem fileOpen=new JMenuItem("Open", new ImageIcon("images/icons8-opened-folder-24.png"));
-		fileOpen.setForeground(Color.WHITE);
+		/////NOVO
+		JMenu fileOpen=new JMenu("Open");
+		fileOpen.setIcon(new ImageIcon("images/icons8-opened-folder-24.png"));
+		fileOpen.setForeground(Color.white);
+		add(fileOpen);
+		JMenuItem fileOpenEmployee=new JMenuItem("Employee", new ImageIcon("images/icons8-add-user-male-24.png"));
+		fileOpenEmployee.setForeground(Color.white);
+		fileOpenEmployee.addActionListener(new ActionListener() {
+			//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AddEmployeeDialog addingEmployeeDialog=new AddEmployeeDialog(null, "Add a new employee", true);
+				addingEmployeeDialog.setVisible(true);
+			}
+		});
+		JMenuItem fileOpenSoftware=new JMenuItem("Software", new ImageIcon("images/icons8-google-code-24.png"));
+		fileOpenSoftware.setForeground(Color.white);
+		fileOpenSoftware.addActionListener(new ActionListener() {
+			//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				AddSoftwareDialog addingSoftwareDialog=new AddSoftwareDialog(null, "Add a new software", true);
+				addingSoftwareDialog.setVisible(true);
+			}
+		});
+		
+		fileOpen.add(fileOpenEmployee);
+		fileOpen.addSeparator();
+		fileOpen.add(fileOpenSoftware);
+		
+		
+		
+		//JMenuItem fileOpen=new JMenuItem("Open", new ImageIcon("images/icons8-opened-folder-24.png"));
+		//fileOpen.setForeground(Color.WHITE);
 		JMenuItem fileClose=new JMenuItem("Close", new ImageIcon("images/icons8-unavailable-24.png"));
 		fileClose.setForeground(Color.WHITE);
 		
@@ -124,19 +157,6 @@ public class MyMenuBar extends JMenuBar{
 		add(edit);
 		add(help);
 	}
-	
-	///////////////////Da meni bude DARK GRAY/////////////////
-//	Color bgColor=Color.DARK_GRAY;
-//	public void setColor(Color color) {
-//		bgColor=color;
-//	}
-//	@Override
-//	protected void paintComponent(Graphics g) {
-//		super.paintComponent(g);
-//		Graphics2D graphics2d=(Graphics2D) g;
-//		graphics2d.setColor(bgColor);
-//		graphics2d.fillRect(0, 0, getWidth(), getHeight());
-//	}
 	
 	
 }

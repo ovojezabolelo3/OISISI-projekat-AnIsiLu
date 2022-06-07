@@ -72,6 +72,19 @@ public class EmployeeInfoPanel extends JPanel {
 		panFirstName.add(lblFirstName);
 		panFirstName.add(txtFirstName);
 
+		JPanel panEmail=new JPanel(new FlowLayout(FlowLayout.LEFT));
+		panEmail.setBackground(bg_color);
+		JLabel lblEmail=new JLabel("e-mail:");
+		lblEmail.setForeground(Color.white);
+		lblEmail.setPreferredSize(dimension);
+		JTextField txtEmail=new JTextField(15);
+		txtEmail.setName("txtEmail");
+		txtEmail.addFocusListener(focusListener);
+		txtEmail.setPreferredSize(dimension);
+		
+		panEmail.add(lblEmail);
+		panEmail.add(txtEmail);
+		
 		JPanel panAdress = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panAdress.setBackground(bg_color);
 		JLabel lblAdress = new JLabel("Adress:");
@@ -139,6 +152,7 @@ public class EmployeeInfoPanel extends JPanel {
 		boxEmployeeInfo.add(panDateOfBirth);
 		boxEmployeeInfo.add(panJMBG);
 		boxEmployeeInfo.add(panAdress);
+		boxEmployeeInfo.add(panEmail);
 		boxEmployeeInfo.add(panJobPosition);
 		add(boxEmployeeInfo, BorderLayout.CENTER);
 		
