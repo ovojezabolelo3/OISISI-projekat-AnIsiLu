@@ -6,15 +6,18 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Menu;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.security.PublicKey;
 
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 
@@ -131,7 +134,16 @@ public class MyMenuBar extends JMenuBar{
 		file.addSeparator();
 		file.add(fileClose);
 		
-
+		//https://stackoverflow.com/questions/26762324/swing-how-to-close-jpanel-programmatically
+		
+		fileClose.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						//zatvara celu aplikaciju 
+						System.exit(0);
+					}
+				});
 		
 		JMenu edit=new JMenu("Edit");
 		edit.setForeground(Color.WHITE);

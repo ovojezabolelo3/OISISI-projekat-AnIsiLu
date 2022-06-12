@@ -1,11 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-
 import javax.security.auth.login.FailedLoginException;
 import javax.sound.sampled.BooleanControl;
 
@@ -390,6 +384,19 @@ public class SoftwareInfoPanel extends JPanel {
 		JButton btnCancel=new JButton("Cancel");
 		panOkCancel.add(btnOK);
 		panOkCancel.add(btnCancel);
+		
+		//https://stackoverflow.com/questions/26762324/swing-how-to-close-jpanel-programmatically
+		
+				btnCancel.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// zatvara prozor klikom na cancel
+						JComponent comp = (JComponent) e.getSource();
+						  Window win = SwingUtilities.getWindowAncestor(comp);
+						  win.dispose();
+					}
+				});
 		
 		
 		Box boxSoftwareInfo=Box.createVerticalBox();

@@ -32,7 +32,7 @@ public class MyStatusbar extends JPanel{
 		add(lblCurrentDateTime);
 		
 		// https://www.codegrepper.com/code-examples/java/java+repeat+function+every+minute
-		 
+		  
 		 
 				Timer timer = new Timer();
 				timer.schedule(new TimerTask() {
