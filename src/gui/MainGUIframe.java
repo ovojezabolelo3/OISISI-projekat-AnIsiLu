@@ -64,6 +64,8 @@ public class MainGUIframe extends JFrame {
 		
 		getContentPane().setBackground(new Color(61,61,61));
 		
+		///////////// Tabovi /////////////
+		
 	}
 
 }
