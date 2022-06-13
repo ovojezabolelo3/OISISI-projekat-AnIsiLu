@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Window;
 //import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -32,7 +34,25 @@ import javax.swing.JCheckBox;	//za dodavanje checkbox-a
 
 import listeners.EmployeeInfoFocusListener;
 
+
+
 public class EmployeeInfoPanel extends JPanel {
+	
+	JButton btnOK;
+	JButton btnCancel;
+	JTextField txtLastName;
+	JTextField txtFirstName;
+	JTextField txtEmail;
+	JTextField txtJMBG;
+	JTextField txtDateOfBirth;
+	JTextField txtAdress;
+	final JComboBox<String> cBox;
+	JCheckBox checkBox1;
+	JCheckBox checkBox2;
+	JCheckBox checkBox3;
+	JCheckBox checkBox4;
+	JCheckBox checkBox5;
+	JTextArea TextOut;
 	
 	private Color bg_color=new Color(61,61,61);
 	
@@ -50,7 +70,8 @@ public class EmployeeInfoPanel extends JPanel {
 		JLabel lblLastName = new JLabel("Last name*:");
 		lblLastName.setForeground(Color.white);
 		lblLastName.setPreferredSize(dimension);
-		JTextField txtLastName = new JTextField(15);
+		//JTextField txtLastName = new JTextField(15);
+		txtLastName = new JTextField(15);
 		txtLastName.setPreferredSize(dimension);
 		txtLastName.setName("txtLastName");
 		txtLastName.setBackground(Color.GRAY);
@@ -72,7 +93,8 @@ public class EmployeeInfoPanel extends JPanel {
 		JLabel lblFirstName = new JLabel("First name:");
 		lblFirstName.setForeground(Color.white);
 		lblFirstName.setPreferredSize(dimension);
-		JTextField txtFirstName = new JTextField(10);
+		//JTextField txtFirstName = new JTextField(10);
+		txtFirstName = new JTextField(10);
 		txtFirstName.setBackground(Color.GRAY);
 		txtFirstName.setName("txtFirstName");
 		txtFirstName.addFocusListener(focusListener);
@@ -88,7 +110,8 @@ public class EmployeeInfoPanel extends JPanel {
 		JLabel lblEmail=new JLabel("e-mail:");
 		lblEmail.setForeground(Color.white);
 		lblEmail.setPreferredSize(dimension);
-		JTextField txtEmail=new JTextField(15);
+		//JTextField txtEmail=new JTextField(15);
+		txtEmail=new JTextField(15);
 		txtEmail.setName("txtEmail");
 		txtEmail.addFocusListener(focusListener);
 		txtEmail.setPreferredSize(dimension);
@@ -101,7 +124,8 @@ public class EmployeeInfoPanel extends JPanel {
 		JLabel lblAdress = new JLabel("Adress:");
 		lblAdress.setForeground(Color.white);
 		lblAdress.setPreferredSize(dimension);
-		JTextField txtAdress = new JTextField(20); // Proveriti da li treba ipak 3 JTextField-a za unos adrese
+		//JTextField txtAdress = new JTextField(20); // Proveriti da li treba ipak 3 JTextField-a za unos adrese
+		txtAdress = new JTextField(20);
 		txtAdress.setBackground(Color.GRAY);
 		txtAdress.setName("txtAdress");
 		txtAdress.addFocusListener(focusListener);
@@ -114,7 +138,8 @@ public class EmployeeInfoPanel extends JPanel {
 		JLabel lblDateofBirth = new JLabel("Date of birth:");
 		lblDateofBirth.setPreferredSize(dimension);
 		lblDateofBirth.setForeground(Color.white);
-		JTextField txtDateOfBirth = new JTextField();
+		//JTextField txtDateOfBirth = new JTextField();
+		txtDateOfBirth = new JTextField();
 		txtDateOfBirth.setBackground(Color.GRAY);
 		txtDateOfBirth.setName("txtDateOfBirth");
 		txtDateOfBirth.addFocusListener(focusListener);
@@ -128,7 +153,8 @@ public class EmployeeInfoPanel extends JPanel {
 		JLabel lblJMBG = new JLabel("JMBG:");
 		lblJMBG.setForeground(Color.white);
 		lblJMBG.setPreferredSize(dimension);
-		JTextField txtJMBG = new JTextField(13);
+		//JTextField txtJMBG = new JTextField(13);
+		txtJMBG = new JTextField(13);
 		txtJMBG.setBackground(Color.GRAY);
 		txtJMBG.setName("txtJMBG");
 		txtJMBG.addFocusListener(focusListener);
@@ -149,7 +175,8 @@ public class EmployeeInfoPanel extends JPanel {
 				"3d modeler", "animator", "rigger", "illustrator"
 		};
 		
-		final JComboBox<String> cBox=new JComboBox<String>(choices);
+		//final JComboBox<String> cBox=new JComboBox<String>(choices);
+		cBox=new JComboBox<String>(choices);
 		cBox.setMaximumSize(cBox.getPreferredSize());
 		cBox.setAlignmentX(Component.CENTER_ALIGNMENT);
 		cBox.setBackground(bg_color);
@@ -174,9 +201,11 @@ public class EmployeeInfoPanel extends JPanel {
 		panOKCancel.setPreferredSize(new Dimension(30,60));
 		
 		
-		JButton btnOK=new JButton("OK");
+		//JButton btnOK=new JButton("OK");
+		btnOK=new JButton("OK");
 		//btnOK.setSize(10, 10);
-		JButton btnCancel=new JButton("Cancel");
+		//JButton btnCancel=new JButton("Cancel");
+		btnCancel=new JButton("Cancel");
 		//btnCancel.setSize(10, 10);
 		panOKCancel.add(btnOK);
 		panOKCancel.add(btnCancel);
@@ -206,23 +235,28 @@ public class EmployeeInfoPanel extends JPanel {
 		
 		
 		///////////////////CHECKBOX////////////////
-		JCheckBox checkBox1=new JCheckBox("3ds Max");
+		//JCheckBox checkBox1=new JCheckBox("3ds Max");
+		checkBox1=new JCheckBox("3ds Max");
 		checkBox1.setBackground(bg_color);
 		checkBox1.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox1);
-		JCheckBox checkBox2=new JCheckBox("Maya");
+		//JCheckBox checkBox2=new JCheckBox("Maya");
+		checkBox2=new JCheckBox("Maya");
 		checkBox2.setBackground(bg_color);
 		checkBox2.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox2);
-		JCheckBox checkBox3=new JCheckBox("Blender");
+		//JCheckBox checkBox3=new JCheckBox("Blender");
+		checkBox3=new JCheckBox("Blender");
 		checkBox3.setBackground(bg_color);
 		checkBox3.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox3);
-		JCheckBox checkBox4=new JCheckBox("ZBrush");
+		//JCheckBox checkBox4=new JCheckBox("ZBrush");
+		checkBox4=new JCheckBox("ZBrush");
 		checkBox4.setBackground(bg_color);
 		checkBox4.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox4);
-		JCheckBox checkBox5=new JCheckBox("Photoshop");
+		//JCheckBox checkBox5=new JCheckBox("Photoshop");
+		checkBox5=new JCheckBox("Photoshop");
 		checkBox5.setBackground(bg_color);
 		checkBox5.setForeground(Color.white);
 		panSoftwareCheck.add(checkBox5);
@@ -238,10 +272,90 @@ public class EmployeeInfoPanel extends JPanel {
 		boxOKCancel.add(Box.createGlue());
 		add(boxOKCancel,BorderLayout.SOUTH);
 		
-		
-		
-		
-
+		/*
+		//probni deo za ispis!!!
+		TextOut = new JTextArea();
+		TextOut.setFont(new Font("Arial", Font.PLAIN, 15));
+		TextOut.setSize(100, 200);
+		TextOut.setLocation(500, 100);
+		TextOut.setLineWrap(true);
+		TextOut.setEditable(false);
+		add(TextOut);
+*/
 	}
+	
+	/*
+	public void actionPerformed(ActionEvent e)
+	{
+		if (e.getSource() == btnOK) {
+			//if (term.isSelected()) {
+				String data
+					= "Last Name : "
+					+ txtLastName.getText() + "\n"
+					+ "Name : "
+					+ txtFirstName.getText() + "\n"
+					+ "Date of birth : "
+					+ txtDateOfBirth.getText() + "\n"
+					+ "JMBG : "
+					+ txtJMBG.getText() + "\n"
+					+ "Address : "
+					+ txtAdress.getText() + "\n"
+					+ "Email : "
+					+ txtEmail.getText() + "\n";
+				
+				String data1
+					= "Job position : "
+					+ (String)cBox.getSelectedItem()
+					+ "\n"
+					+"Software :";
 
+				String data2 = null;
+				
+				if (checkBox1.isSelected()) {
+					data2 = "3ds Max"
+							+ ";";
+				}
+				if (checkBox2.isSelected()) {
+					data2 = "Maya"
+							+ ";";
+				}
+				if (checkBox3.isSelected()) {
+					data2 = "Blender"
+							+ ";";
+				}
+				if (checkBox4.isSelected()) {
+					data2 = "ZBrush"
+							+ ";";
+				}
+				if (checkBox5.isSelected()) {
+					data2 = "Photoshop"
+							+ ";";
+				}
+				
+				//ovde se stavlja sve u prozor za prikaz!!!!!!!!!!!!!!!!!!
+				TextOut.setText(data + data1 + data2);
+				TextOut.setEditable(false);
+		
+
+		else if (e.getSource() == btnCancel) {
+			String def = "";
+			txtLastName.setText(def);
+			txtFirstName.setText(def);
+			txtDateOfBirth.setText(def);
+			txtJMBG.setText(def);
+			txtAdress.setText(def);
+			txtEmail.setText(def);
+			TextOut.setText(def);
+			checkBox1.setSelected(false);
+			checkBox2.setSelected(false);
+			checkBox3.setSelected(false);
+			checkBox4.setSelected(false);
+			checkBox5.setSelected(false);
+			cBox.setSelectedIndex(0);
+			//resadd.setText(def);
+		}
+	}
+*/
 }
+
+
