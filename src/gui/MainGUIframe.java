@@ -1,10 +1,13 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Menu;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
@@ -14,10 +17,15 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JToolBar;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 
 import java.awt.BorderLayout;
 import listeners.MyWindowListener;
+
+import classes.TextOut;
 
 public class MainGUIframe extends JFrame {
 
@@ -64,6 +72,62 @@ public class MainGUIframe extends JFrame {
 		
 		getContentPane().setBackground(new Color(61,61,61));
 		
+		//text area
+		//JTextArea TextOut = new TextOut();
+		//TextOut.setEditable(false);
+		//add(TextOut);
+		
+	
+		
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TABELA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		String[] columnNames = {
+                "Last Name",
+                "First Name",
+                "Date of Birth",
+                "JMBG",
+                "Address",
+                "Email",
+                "Job position",
+                "Software"};
+
+		Object[][] data = {
+				{
+                "Last Name",
+                "First Name",
+                "Date of Birth",
+                "JMBG",
+                "Address",
+                "Email",
+                "Job position",
+                "Software"},
+				{
+	                "Last Name",
+	                "First Name",
+	                "Date of Birth",
+	                "JMBG",
+	                "Address",
+	                "Email",
+	                "Job position",
+	                "Software"},
+				{
+	                "Last Name",
+	                "First Name",
+	                "Date of Birth",
+	                "JMBG",
+	                "Address",
+	                "Email",
+	                "Job position",
+	                "Software"}
+				};
+		
+		JTable TableEm = new JTable(data, columnNames) {
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			};
+		};
+		
+		JScrollPane scrollPane = new JScrollPane(TableEm);
+		add(TableEm, BorderLayout.CENTER);
 	}
 
 }

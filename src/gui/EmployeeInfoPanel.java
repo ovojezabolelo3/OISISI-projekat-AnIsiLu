@@ -33,7 +33,7 @@ import javax.swing.WindowConstants;
 import javax.swing.JCheckBox;	//za dodavanje checkbox-a
 
 import listeners.EmployeeInfoFocusListener;
-
+import classes.TextOut;
 
 
 public class EmployeeInfoPanel extends JPanel {
@@ -284,7 +284,7 @@ public class EmployeeInfoPanel extends JPanel {
 */
 	}
 	
-	/*
+	
 	public void actionPerformed(ActionEvent e)
 	{
 		if (e.getSource() == btnOK) {
@@ -333,8 +333,8 @@ public class EmployeeInfoPanel extends JPanel {
 				}
 				
 				//ovde se stavlja sve u prozor za prikaz!!!!!!!!!!!!!!!!!!
-				TextOut.setText(data + data1 + data2);
-				TextOut.setEditable(false);
+				TableEm.setText(data + data1 + data2);
+				//TableEm.setEditable(false);
 		
 
 		else if (e.getSource() == btnCancel) {
@@ -345,17 +345,17 @@ public class EmployeeInfoPanel extends JPanel {
 			txtJMBG.setText(def);
 			txtAdress.setText(def);
 			txtEmail.setText(def);
-			TextOut.setText(def);
+			TableEm.setText(def);
 			checkBox1.setSelected(false);
 			checkBox2.setSelected(false);
 			checkBox3.setSelected(false);
 			checkBox4.setSelected(false);
 			checkBox5.setSelected(false);
 			cBox.setSelectedIndex(0);
-			//resadd.setText(def);
+			
 		}
 	}
-*/
+
 }
 
 
