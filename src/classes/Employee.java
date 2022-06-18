@@ -6,17 +6,23 @@ public class Employee implements Serializable{
 	
 	//promenljive
 private String name, surname;
-private int jmbg;
-private int dateOfBirth;
+private String jmbg;
+private String dateOfBirth;
 private String email;
+private String jobPosition;
 
-public Employee(String name, String surname, int jmbg, int dateOfBirth, String email) {
+public Employee(String name, String surname, String jmbg, String dateOfBirth, String email) {
 	this.name = name;
 	this.surname = surname;
 	this.jmbg = jmbg;
 	this.dateOfBirth = dateOfBirth;
 	this.email = email;
 
+}
+
+public Employee(String jobPosition) {
+	this.jobPosition = jobPosition;
+	
 }
 
 //koristiti for i if za proveru jmbg-a kod unosa korisnika 
@@ -31,6 +37,14 @@ public Employee(String name, String surname, int jmbg, int dateOfBirth, String e
 public Employee(){}
 
 //metode
+public String getJobPosition() {
+	return jobPosition;
+}
+
+public void setJobPosition(String jobPosition) {
+	this.jobPosition = jobPosition;
+}
+
 public String getName() {
 	return name;
 }
@@ -47,19 +61,19 @@ public void setSurname(String surname) {
 	this.surname = surname;
 }
 
-public int getJmbg() {
+public String getJmbg() {
 	return jmbg;
 }
 
-public void setJmbg(int jmbg) {
+public void setJmbg(String jmbg) {
 	this.jmbg = jmbg;
 }
 
-public int getDateOfBirth() {
+public String getDateOfBirth() {
 	return dateOfBirth;
 }
 
-public void setDateOfBirth(int dateOfBirth) {
+public void setDateOfBirth(String dateOfBirth) {
 	this.dateOfBirth = dateOfBirth;
 }
 
@@ -73,7 +87,7 @@ public void setEmail(String email) {
 
 @Override
 public String toString() {
-	return name + "," + surname + "," + jmbg + "," + dateOfBirth +","+ email ;
+	return name + "," + surname + "," + jmbg + "," + dateOfBirth +","+ email;
 }
 
 }

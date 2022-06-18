@@ -33,6 +33,9 @@ import javax.swing.WindowConstants;
 import javax.swing.JCheckBox;	//za dodavanje checkbox-a
 
 import listeners.EmployeeInfoFocusListener;
+import classes.Adress;
+import classes.Employee;
+import classes.Software;
 import classes.TextOut;
 
 
@@ -52,7 +55,11 @@ public class EmployeeInfoPanel extends JPanel {
 	JCheckBox checkBox3;
 	JCheckBox checkBox4;
 	JCheckBox checkBox5;
-	JTextArea TextOut;
+	
+	Employee employeeeEmployee;
+	Adress adress;
+	Software software;
+	Employee jobPosEmployee;
 	
 	private Color bg_color=new Color(61,61,61);
 	
@@ -272,70 +279,39 @@ public class EmployeeInfoPanel extends JPanel {
 		boxOKCancel.add(Box.createGlue());
 		add(boxOKCancel,BorderLayout.SOUTH);
 		
-		/*
-		//probni deo za ispis!!!
-		TextOut = new JTextArea();
-		TextOut.setFont(new Font("Arial", Font.PLAIN, 15));
-		TextOut.setSize(100, 200);
-		TextOut.setLocation(500, 100);
-		TextOut.setLineWrap(true);
-		TextOut.setEditable(false);
-		add(TextOut);
-*/
 	}
 	
 	
 	public void actionPerformed(ActionEvent e)
 	{
 		if (e.getSource() == btnOK) {
-			//if (term.isSelected()) {
-				String data
-					= "Last Name : "
-					+ txtLastName.getText() + "\n"
-					+ "Name : "
-					+ txtFirstName.getText() + "\n"
-					+ "Date of birth : "
-					+ txtDateOfBirth.getText() + "\n"
-					+ "JMBG : "
-					+ txtJMBG.getText() + "\n"
-					+ "Address : "
-					+ txtAdress.getText() + "\n"
-					+ "Email : "
-					+ txtEmail.getText() + "\n";
 				
-				String data1
-					= "Job position : "
-					+ (String)cBox.getSelectedItem()
-					+ "\n"
-					+"Software :";
+				employeeeEmployee = new Employee(txtFirstName.getText(), txtLastName.getText(), txtJMBG.getText(), txtDateOfBirth.getText(), txtEmail.getText());
+				
+				adress = new Adress(txtAdress.getText(), txtAdress.getText(), txtAdress.getText()); //namesti da se uzima pre razmaka
+				
+				jobPosEmployee = new Employee((String)cBox.getSelectedItem()); //za biranje posla
 
-				String data2 = null;
-				
-				if (checkBox1.isSelected()) {
-					data2 = "3ds Max"
-							+ ";";
+				if (checkBox1.isSelected()) {//za biranje softvera
+					software = new Software("3ds Max");
 				}
+				
 				if (checkBox2.isSelected()) {
-					data2 = "Maya"
-							+ ";";
-				}
-				if (checkBox3.isSelected()) {
-					data2 = "Blender"
-							+ ";";
-				}
-				if (checkBox4.isSelected()) {
-					data2 = "ZBrush"
-							+ ";";
-				}
-				if (checkBox5.isSelected()) {
-					data2 = "Photoshop"
-							+ ";";
+					software = new Software("Maya");
 				}
 				
-				//ovde se stavlja sve u prozor za prikaz!!!!!!!!!!!!!!!!!!
-				TableEm.setText(data + data1 + data2);
-				//TableEm.setEditable(false);
-		
+				if (checkBox3.isSelected()) {
+					software = new Software("Blender");
+				}
+				
+				if (checkBox4.isSelected()) {
+					software = new Software("ZBrush");
+				}
+				
+				if (checkBox5.isSelected()) {
+					software = new Software("Photoshop");
+				}
+				
 
 		else if (e.getSource() == btnCancel) {
 			String def = "";
@@ -345,7 +321,7 @@ public class EmployeeInfoPanel extends JPanel {
 			txtJMBG.setText(def);
 			txtAdress.setText(def);
 			txtEmail.setText(def);
-			TableEm.setText(def);
+			//TableEm.setText(def);
 			checkBox1.setSelected(false);
 			checkBox2.setSelected(false);
 			checkBox3.setSelected(false);
@@ -353,9 +329,10 @@ public class EmployeeInfoPanel extends JPanel {
 			checkBox5.setSelected(false);
 			cBox.setSelectedIndex(0);
 			
+			}
 		}
-	}
 
+	}
 }
 
 

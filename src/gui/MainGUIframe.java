@@ -25,8 +25,6 @@ import javax.swing.JButton;
 import java.awt.BorderLayout;
 import listeners.MyWindowListener;
 
-import classes.TextOut;
-
 public class MainGUIframe extends JFrame {
 
 	private static final long serialVersionUID = -8026416994513756565L;
@@ -72,13 +70,6 @@ public class MainGUIframe extends JFrame {
 		
 		getContentPane().setBackground(new Color(61,61,61));
 		
-		//text area
-		//JTextArea TextOut = new TextOut();
-		//TextOut.setEditable(false);
-		//add(TextOut);
-		
-	
-		
 		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TABELA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		String[] columnNames = {
                 "Last Name",
@@ -121,6 +112,9 @@ public class MainGUIframe extends JFrame {
 				};
 		
 		JTable TableEm = new JTable(data, columnNames) {
+			
+			private static final long serialVersionUID = -6288921604070804302L;
+
 			public boolean isCellEditable(int row, int column) {
 				return false;
 			};

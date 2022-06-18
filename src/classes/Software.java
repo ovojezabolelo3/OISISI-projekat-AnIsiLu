@@ -22,7 +22,10 @@ this.modifiers = modifiers;
 
 }
 
-//ukljuciti render i cetkice
+public Software(String softwareName)
+{
+this.softwareName = softwareName;
+}
 
 public Software(){}
 
