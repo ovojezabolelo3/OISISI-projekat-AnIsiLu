@@ -1,16 +1,33 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JToolBar;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
+import dialogs.AboutUsDialog;
+import dialogs.AddEmployeeDialog;
+import dialogs.AddSoftwareDialog;
 import listeners.ToolbarMouseListener;
 
 public class MyToolbar extends JToolBar {
@@ -41,6 +58,68 @@ public class MyToolbar extends JToolBar {
 			
 			 
 		});
+		
+		
+		btnCreate.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			JDialog ChooseDialog = new JDialog();
+			ChooseDialog.setTitle("What do you want to add?");
+			ChooseDialog.setSize(350,100);
+			ChooseDialog.setLocationRelativeTo(ChooseDialog);
+			ChooseDialog.setResizable(false);
+			
+			Dimension dimensionButton = new Dimension(150, 55);
+			JPanel ChoosePanel=new JPanel();
+			ChoosePanel.setBackground(new Color(61,61,61));
+			ChooseDialog.add(ChoosePanel);
+			
+			ChooseDialog.setVisible(true);
+			
+			JButton btnEmp = new JButton("Employee");
+			btnEmp.setPreferredSize(dimensionButton);
+			btnEmp.setBackground(new Color(121,121,121));
+			btnEmp.setBorder(new LineBorder(new Color(166,166,166)));
+			
+			JButton btnSoft = new JButton("Software");
+			btnSoft.setPreferredSize(dimensionButton);
+			btnSoft.setBackground(new Color(121,121,121));
+			btnSoft.setBorder(new LineBorder(new Color(166,166,166)));
+			
+			ChoosePanel.add(btnEmp);
+			ChoosePanel.add(btnSoft);
+			
+			btnEmp.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					AddEmployeeDialog addingEmployeeDialog=new AddEmployeeDialog(null, "Add a new employee", true);
+					addingEmployeeDialog.setVisible(true);
+					JComponent comp = (JComponent) e.getSource();
+		            Window win = SwingUtilities.getWindowAncestor(comp);
+		            win.dispose();
+
+				}
+				
+			});
+			
+			btnSoft.addActionListener(new ActionListener() {
+				//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					AddSoftwareDialog addingSoftwareDialog=new AddSoftwareDialog(null, "Add a new software", true);
+					addingSoftwareDialog.setVisible(true);
+					JComponent comp = (JComponent) e.getSource();
+		            Window win = SwingUtilities.getWindowAncestor(comp);
+		            win.dispose();
+				}
+			});
+			
+			}
+		});
+
 		
 		
 		JButton btnEdit = new JButton("", new ImageIcon("images/icons8-edit-24.png"));
