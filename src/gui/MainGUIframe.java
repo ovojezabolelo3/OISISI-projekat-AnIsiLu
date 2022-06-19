@@ -23,6 +23,7 @@ import classes.Software;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -78,63 +79,84 @@ public class MainGUIframe extends JFrame {
 		getContentPane().setBackground(new Color(61,61,61));
 		
 		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TABELA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		String[] columnNames = {
-				"First Name",
-                "Last Name",
-                "Date of Birth",
-                "JMBG",
-                "Email",
-                "Address",
-                 "Job position",
-                "Software"}; //ovaj deo je ok i ne treba se menjati
-		
-		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~proba~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		Employee empProba = new Employee("Isidora","Nikolic","53453453542","1.3.2000","isanfnsdfn");
-		Adress adrProb = new Adress("Jos put 44");
-		Employee jobPosProba=new Employee("riger");
-		Software softProba=new Software("Maya");
-		
-		Object[][] data = {
-				{
-					"First Name",
-	                "Last Name",
-	                "Date of Birth",
-	                "JMBG",
-	                "Email",
-	                "Address",
-	                 "Job position",
-	                "Software"},
-				{
-	                	"First Name",
-	                    "Last Name",
-	                    "Date of Birth",
-	                    "JMBG",
-	                    "Email",
-	                    "Address",
-	                     "Job position",
-	                    "Software"},
-				{
-	                    	empProba.getName(),
-	                    	empProba.getSurname(),
-	                    	empProba.getDateOfBirth(),
-	                    	empProba.getJmbg(),
-	                    	empProba.getEmail(),
-	                    	adrProb.getFullAddress(),
-	                    	jobPosProba.getJobPosition(),
-	                    	softProba.getSoftwareName()}
-				};
-		
-		JTable TableEm = new JTable(data, columnNames) {
-			
-			private static final long serialVersionUID = -6288921604070804302L;
+				String[] columnNames = {
+						"First Name",
+		                "Last Name",
+		                "Date of Birth",
+		                "JMBG",
+		                "Email",
+		                "Address",
+		                 "Job position",
+		                "Software"}; //ovaj deo je ok i ne treba se menjati
+				
+				//~~~~~~~~~~~~~~~~~~~~~~~~~~~~proba~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				Employee empProba = new Employee("Isidora","Nikolic","53453453542","1.3.2000","isanfnsdfn");
+				Adress adrProb = new Adress("Jos put 44");
+				Employee jobPosProba=new Employee("riger");
+				Software softProba=new Software("Maya");
+				
+				Object[][] data = {
+						{
+							"First Name",
+			                "Last Name",
+			                "Date of Birth",
+			                "JMBG",
+			                "Email",
+			                "Address",
+			                 "Job position",
+			                "Software"},
+						{
+			                	"First Name",
+			                    "Last Name",
+			                    "Date of Birth",
+			                    "JMBG",
+			                    "Email",
+			                    "Address",
+			                     "Job position",
+			                    "Software"},
+						{
+			                    	empProba.getName(),
+			                    	empProba.getSurname(),
+			                    	empProba.getDateOfBirth(),
+			                    	empProba.getJmbg(),
+			                    	empProba.getEmail(),
+			                    	adrProb.getFullAddress(),
+			                    	jobPosProba.getJobPosition(),
+			                    	softProba.getSoftwareName()}
+						};
+				
+				JTable TableEm = new JTable(data, columnNames) {
+					
+					private static final long serialVersionUID = -6288921604070804302L;
 
-			public boolean isCellEditable(int row, int column) {
-				return false;
-			};
-		};
+					public boolean isCellEditable(int row, int column) {
+						return false;
+					};
+				};
+				
+				JScrollPane scrollPane = new JScrollPane(TableEm);
+				add(TableEm, BorderLayout.CENTER);
 		
-		JScrollPane scrollPane = new JScrollPane(TableEm);
-		add(TableEm, BorderLayout.CENTER);
+///////////// Tabovi /////////////
+		
+	//UIManager.put("TabbedPane.selected", Color.LIGHT_GRAY);
+	JTabbedPane tabs = new JTabbedPane();
+	JPanel PanelEmp=new JPanel();
+	JPanel PanelSoft=new JPanel();
+	PanelEmp.add(TableEm);
+	
+	tabs.addTab("Employees", TableEm);
+	
+	
+	tabs.addTab("Software",PanelSoft);
+		
+
+	tabs.setBackground(Color.GRAY);
+
+
+	add(tabs);
+		
+		
 	}
 
 }

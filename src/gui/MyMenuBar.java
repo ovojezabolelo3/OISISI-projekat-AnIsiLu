@@ -20,7 +20,7 @@ import javax.swing.JMenuItem;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-
+import dialogs.AboutUsDialog;
 import dialogs.AddEmployeeDialog;
 import dialogs.AddSoftwareDialog;
 
@@ -161,6 +161,15 @@ public class MyMenuBar extends JMenuBar{
 		help.setForeground(Color.WHITE);
 		JMenuItem helpAbout = new JMenuItem("About", new ImageIcon("images/icons8-about-24.png"));
 		helpAbout.setForeground(Color.WHITE);
+		helpAbout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				AboutUsDialog fileOpenAbout=new AboutUsDialog(null, "About Us", true);
+				fileOpenAbout.setVisible(true);
+			}
+		});
 		
 		help.add(helpAbout);
 
