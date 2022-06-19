@@ -8,6 +8,7 @@ public class Adress implements Serializable{ //koristi se da bi se cuvale inform
 private String streetNumber;
 private String streetName;
 private String townName;
+private String fullAddress;
 //String contry;
 
 //konstruktori
@@ -19,9 +20,23 @@ public Adress(String townName,String streetName , String streetNumber)
     
 	}
 
+public Adress(String fullAddress)
+{
+this.fullAddress = fullAddress;
+
+}
+
 public Adress(){}
 
 //metode
+public String getFullAddress() {
+	return fullAddress;
+}
+
+public void setFullAddress(String fullAddress) {
+	this.fullAddress = fullAddress;
+}
+
 public String getStreetNumber() {
 	return streetNumber;
 }

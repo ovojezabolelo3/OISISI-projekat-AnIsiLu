@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
 
 import javax.sound.sampled.BooleanControl;
 import javax.swing.Action;
@@ -25,6 +26,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -36,10 +38,16 @@ import listeners.EmployeeInfoFocusListener;
 import classes.Adress;
 import classes.Employee;
 import classes.Software;
+import classes.TableEmployee;
 import classes.TextOut;
 
 
 public class EmployeeInfoPanel extends JPanel {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	JButton btnOK;
 	JButton btnCancel;
@@ -60,6 +68,15 @@ public class EmployeeInfoPanel extends JPanel {
 	Adress adress;
 	Software software;
 	Employee jobPosEmployee;
+	
+	ArrayList<String> addressArray = new ArrayList<String>();
+	ArrayList<String> jobPosArray = new ArrayList<String>();
+	ArrayList<String> softwareArray = new ArrayList<String>();
+	ArrayList<String> nameArray = new ArrayList<String>();
+	ArrayList<String> surnameArray = new ArrayList<String>();
+	ArrayList<String> jmbgArray = new ArrayList<String>();
+	ArrayList<String> dobArray = new ArrayList<String>();
+	ArrayList<String> emailArray = new ArrayList<String>();
 	
 	private Color bg_color=new Color(61,61,61);
 	
@@ -227,7 +244,94 @@ public class EmployeeInfoPanel extends JPanel {
 				JComponent comp = (JComponent) e.getSource();
 				  Window win = SwingUtilities.getWindowAncestor(comp);
 				  win.dispose();
+				  
+				  String def = "";
+					txtLastName.setText(def);
+					txtFirstName.setText(def);
+					txtDateOfBirth.setText(def);
+					txtJMBG.setText(def);
+					txtAdress.setText(def);
+					txtEmail.setText(def);
+					//TableEm.setText(def);
+					checkBox1.setSelected(false);
+					checkBox2.setSelected(false);
+					checkBox3.setSelected(false);
+					checkBox4.setSelected(false);
+					checkBox5.setSelected(false);
+					cBox.setSelectedIndex(0);
 			}
+		});
+		
+		btnOK.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				employeeeEmployee = new Employee(txtFirstName.getText(), txtLastName.getText(), txtJMBG.getText(), txtDateOfBirth.getText(), txtEmail.getText());
+				nameArray.add(employeeeEmployee.getName());
+				surnameArray.add(employeeeEmployee.getSurname());
+				dobArray.add(employeeeEmployee.getDateOfBirth());
+				jmbgArray.add(employeeeEmployee.getJmbg());
+				emailArray.add(employeeeEmployee.getEmail());
+				
+				adress = new Adress(txtAdress.getText()); //namesti da se uzima pre razmaka
+				addressArray.add(adress.getFullAddress()); 
+				
+				
+				jobPosEmployee = new Employee((String)cBox.getSelectedItem()); //za biranje posla
+				jobPosArray.add(jobPosEmployee.getJobPosition());
+				
+				
+				if (checkBox1.isSelected()) {//za biranje softvera
+					software = new Software("3ds Max");
+					softwareArray.add(software.getSoftwareName());
+				}
+				
+				else if (checkBox2.isSelected()) {
+					software = new Software("Maya");
+					softwareArray.add(software.getSoftwareName());
+				}
+				
+				else if (checkBox3.isSelected()) {
+					software = new Software("Blender");
+					softwareArray.add(software.getSoftwareName());
+				}
+				
+				else if (checkBox4.isSelected()) {
+					software = new Software("ZBrush");
+					softwareArray.add(software.getSoftwareName());
+				}
+				
+				else if (checkBox5.isSelected()) {
+					software = new Software("Photoshop");
+					softwareArray.add(software.getSoftwareName());
+				}
+				
+				TableEmployee tableEmployee = new TableEmployee();
+				
+				Object[][] data = {
+						{
+			                    	employeeeEmployee.getName(),
+			                    	employeeeEmployee.getSurname(),
+			                    	employeeeEmployee.getDateOfBirth(),
+			                    	employeeeEmployee.getJmbg(),
+			                    	employeeeEmployee.getEmail(),
+			                    	adress.getFullAddress(),
+			                    	jobPosEmployee.getJobPosition(),
+			                    	software.getSoftwareName()}
+						};
+				
+				TextOut textOut = new TextOut();
+				add(textOut);
+				
+				
+				textOut.setText(employeeeEmployee.getName() + ' ' + 
+						employeeeEmployee.getSurname()+ ' ' + 
+						employeeeEmployee.getDateOfBirth()+ ' ' +
+						jobPosEmployee.getJobPosition()+ ' ' +
+						software.getSoftwareName()
+						);
+			}
+			
 		});
 		
 		
@@ -281,37 +385,53 @@ public class EmployeeInfoPanel extends JPanel {
 		
 	}
 	
-	
+	/*
 	public void actionPerformed(ActionEvent e)
 	{
 		if (e.getSource() == btnOK) {
 				
 				employeeeEmployee = new Employee(txtFirstName.getText(), txtLastName.getText(), txtJMBG.getText(), txtDateOfBirth.getText(), txtEmail.getText());
+				nameArray.add(employeeeEmployee.getName());
+				surnameArray.add(employeeeEmployee.getSurname());
+				dobArray.add(employeeeEmployee.getDateOfBirth());
+				jmbgArray.add(employeeeEmployee.getJmbg());
+				emailArray.add(employeeeEmployee.getEmail());
 				
-				adress = new Adress(txtAdress.getText(), txtAdress.getText(), txtAdress.getText()); //namesti da se uzima pre razmaka
+				adress = new Adress(txtAdress.getText()); //namesti da se uzima pre razmaka
+				addressArray.add(adress.getFullAddress()); 
+				
 				
 				jobPosEmployee = new Employee((String)cBox.getSelectedItem()); //za biranje posla
-
+				jobPosArray.add(jobPosEmployee.getJobPosition());
+				
+				
 				if (checkBox1.isSelected()) {//za biranje softvera
 					software = new Software("3ds Max");
+					softwareArray.add(software.getSoftwareName());
 				}
 				
-				if (checkBox2.isSelected()) {
+				else if (checkBox2.isSelected()) {
 					software = new Software("Maya");
+					softwareArray.add(software.getSoftwareName());
 				}
 				
-				if (checkBox3.isSelected()) {
+				else if (checkBox3.isSelected()) {
 					software = new Software("Blender");
+					softwareArray.add(software.getSoftwareName());
 				}
 				
-				if (checkBox4.isSelected()) {
+				else if (checkBox4.isSelected()) {
 					software = new Software("ZBrush");
+					softwareArray.add(software.getSoftwareName());
 				}
 				
-				if (checkBox5.isSelected()) {
+				else if (checkBox5.isSelected()) {
 					software = new Software("Photoshop");
+					softwareArray.add(software.getSoftwareName());
 				}
 				
+				
+			}
 
 		else if (e.getSource() == btnCancel) {
 			String def = "";
@@ -330,9 +450,9 @@ public class EmployeeInfoPanel extends JPanel {
 			cBox.setSelectedIndex(0);
 			
 			}
-		}
-
 	}
+*/
 }
+
 
 

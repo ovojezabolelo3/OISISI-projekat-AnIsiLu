@@ -16,6 +16,11 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JToolBar;
+
+import classes.Adress;
+import classes.Employee;
+import classes.Software;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -24,6 +29,8 @@ import javax.swing.JButton;
 
 import java.awt.BorderLayout;
 import listeners.MyWindowListener;
+
+import gui.EmployeeInfoPanel;
 
 public class MainGUIframe extends JFrame {
 
@@ -72,43 +79,49 @@ public class MainGUIframe extends JFrame {
 		
 		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TABELA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		String[] columnNames = {
+				"First Name",
                 "Last Name",
-                "First Name",
                 "Date of Birth",
                 "JMBG",
-                "Address",
                 "Email",
-                "Job position",
-                "Software"};
-
+                "Address",
+                 "Job position",
+                "Software"}; //ovaj deo je ok i ne treba se menjati
+		
+		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~proba~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Employee empProba = new Employee("Isidora","Nikolic","53453453542","1.3.2000","isanfnsdfn");
+		Adress adrProb = new Adress("Jos put 44");
+		Employee jobPosProba=new Employee("riger");
+		Software softProba=new Software("Maya");
+		
 		Object[][] data = {
 				{
-                "Last Name",
-                "First Name",
-                "Date of Birth",
-                "JMBG",
-                "Address",
-                "Email",
-                "Job position",
-                "Software"},
-				{
+					"First Name",
 	                "Last Name",
-	                "First Name",
 	                "Date of Birth",
 	                "JMBG",
-	                "Address",
 	                "Email",
-	                "Job position",
+	                "Address",
+	                 "Job position",
 	                "Software"},
 				{
-	                "Last Name",
-	                "First Name",
-	                "Date of Birth",
-	                "JMBG",
-	                "Address",
-	                "Email",
-	                "Job position",
-	                "Software"}
+	                	"First Name",
+	                    "Last Name",
+	                    "Date of Birth",
+	                    "JMBG",
+	                    "Email",
+	                    "Address",
+	                     "Job position",
+	                    "Software"},
+				{
+	                    	empProba.getName(),
+	                    	empProba.getSurname(),
+	                    	empProba.getDateOfBirth(),
+	                    	empProba.getJmbg(),
+	                    	empProba.getEmail(),
+	                    	adrProb.getFullAddress(),
+	                    	jobPosProba.getJobPosition(),
+	                    	softProba.getSoftwareName()}
 				};
 		
 		JTable TableEm = new JTable(data, columnNames) {

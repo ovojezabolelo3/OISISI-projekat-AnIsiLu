@@ -24,7 +24,7 @@ public class TextOut extends JTextArea{
 		TextOut.setSize(50, 50);
 		TextOut.setLocation(100, 100);
 		TextOut.setLineWrap(true);
-		//TextOut.setEditable(false);
+		TextOut.setEditable(false);
 		
      }  
 	
