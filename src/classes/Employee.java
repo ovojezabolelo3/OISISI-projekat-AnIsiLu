@@ -10,14 +10,15 @@ private String jmbg;
 private String dateOfBirth;
 private String email;
 private String jobPosition;
+private long id;
 
-public Employee(String name, String surname, String jmbg, String dateOfBirth, String email) {
+public Employee(long id, String name, String surname, String jmbg, String dateOfBirth, String email) {
 	this.name = name;
 	this.surname = surname;
 	this.jmbg = jmbg;
 	this.dateOfBirth = dateOfBirth;
 	this.email = email;
-
+	this.id = id;
 }
 
 public Employee(String jobPosition) {
@@ -37,6 +38,14 @@ public Employee(String jobPosition) {
 public Employee(){}
 
 //metode
+public long getId() {
+	return id;
+}
+
+public void setId(long id) {
+	this.id = id;
+}
+
 public String getJobPosition() {
 	return jobPosition;
 }
