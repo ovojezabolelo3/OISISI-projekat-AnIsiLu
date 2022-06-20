@@ -75,17 +75,17 @@ public class MyToolbar extends JToolBar {
 			ChoosePanel.setBackground(new Color(61,61,61));
 			ChooseDialog.add(ChoosePanel);
 			
-			ChooseDialog.setVisible(true);
+			
 			
 			JButton btnEmp = new JButton("Employee",new ImageIcon("images/icons8-add-user-male-24.png"));
 			btnEmp.setPreferredSize(dimensionButton);
 			btnEmp.setBackground(new Color(121,121,121));
-			//btnEmp.setBorder(new LineBorder(new Color(166,166,166)));
+			btnEmp.setBorder(new LineBorder(new Color(166,166,166)));
 			
 			JButton btnSoft = new JButton("Software",new ImageIcon("images/icons8-google-code-24.png"));
 			btnSoft.setPreferredSize(dimensionButton);
 			btnSoft.setBackground(new Color(121,121,121));
-			//btnSoft.setBorder(new LineBorder(new Color(166,166,166)));
+			btnSoft.setBorder(new LineBorder(new Color(166,166,166)));
 			
 			ChoosePanel.add(btnEmp);
 			ChoosePanel.add(btnSoft);
@@ -118,6 +118,7 @@ public class MyToolbar extends JToolBar {
 				}
 			});
 			
+			ChooseDialog.setVisible(true);
 			}
 		});
 
@@ -155,7 +156,7 @@ public class MyToolbar extends JToolBar {
 			ChoosePanel.setBackground(new Color(61,61,61));
 			ChooseDialog.add(ChoosePanel);
 			
-			ChooseDialog.setVisible(true);
+			
 			
 			JButton btnEmp = new JButton("Employee",new ImageIcon("images/icons8-add-user-male-24.png"));
 			btnEmp.setPreferredSize(dimensionButton);
@@ -190,7 +191,7 @@ public class MyToolbar extends JToolBar {
 					addingSoftwareDialog.setVisible(true);
 				}
 			});
-			
+			ChooseDialog.setVisible(true);
 			}
 		});
 		

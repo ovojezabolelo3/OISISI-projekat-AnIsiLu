@@ -40,7 +40,7 @@ import classes.Employee;
 import classes.Software;
 import classes.TableEmployee;
 import classes.TextOut;
-
+import baze.BazaEmployee;
 
 public class EmployeeInfoPanel extends JPanel {
 	
@@ -267,69 +267,47 @@ public class EmployeeInfoPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				employeeeEmployee = new Employee();
-				nameArray.add(employeeeEmployee.getName());
-				surnameArray.add(employeeeEmployee.getSurname());
-				dobArray.add(employeeeEmployee.getDateOfBirth());
-				jmbgArray.add(employeeeEmployee.getJmbg());
-				emailArray.add(employeeeEmployee.getEmail());
+				//nameArray.add(employeeeEmployee.getName());
+				//surnameArray.add(employeeeEmployee.getSurname());
+				//dobArray.add(employeeeEmployee.getDateOfBirth());
+				//jmbgArray.add(employeeeEmployee.getJmbg());
+				//emailArray.add(employeeeEmployee.getEmail());
 				
 				adress = new Adress(txtAdress.getText()); //namesti da se uzima pre razmaka
-				addressArray.add(adress.getFullAddress()); 
+				//addressArray.add(adress.getFullAddress()); 
 				
 				
 				jobPosEmployee = new Employee((String)cBox.getSelectedItem()); //za biranje posla
-				jobPosArray.add(jobPosEmployee.getJobPosition());
+				//jobPosArray.add(jobPosEmployee.getJobPosition());
 				
 				
 				if (checkBox1.isSelected()) {//za biranje softvera
 					software = new Software("3ds Max");
-					softwareArray.add(software.getSoftwareName());
+					//softwareArray.add(software.getSoftwareName());
 				}
 				
 				else if (checkBox2.isSelected()) {
 					software = new Software("Maya");
-					softwareArray.add(software.getSoftwareName());
+					//softwareArray.add(software.getSoftwareName());
 				}
 				
 				else if (checkBox3.isSelected()) {
 					software = new Software("Blender");
-					softwareArray.add(software.getSoftwareName());
+					//softwareArray.add(software.getSoftwareName());
 				}
 				
 				else if (checkBox4.isSelected()) {
 					software = new Software("ZBrush");
-					softwareArray.add(software.getSoftwareName());
+					//softwareArray.add(software.getSoftwareName());
 				}
 				
 				else if (checkBox5.isSelected()) {
 					software = new Software("Photoshop");
-					softwareArray.add(software.getSoftwareName());
+					//softwareArray.add(software.getSoftwareName());
 				}
 				
-				TableEmployee tableEmployee = new TableEmployee();
+				//setListEmployee(employeeeEmployee);
 				
-				Object[][] data = {
-						{
-			                    	employeeeEmployee.getName(),
-			                    	employeeeEmployee.getSurname(),
-			                    	employeeeEmployee.getDateOfBirth(),
-			                    	employeeeEmployee.getJmbg(),
-			                    	employeeeEmployee.getEmail(),
-			                    	adress.getFullAddress(),
-			                    	jobPosEmployee.getJobPosition(),
-			                    	software.getSoftwareName()}
-						};
-				
-				TextOut textOut = new TextOut();
-				add(textOut);
-				
-				
-				textOut.setText(employeeeEmployee.getName() + ' ' + 
-						employeeeEmployee.getSurname()+ ' ' + 
-						employeeeEmployee.getDateOfBirth()+ ' ' +
-						jobPosEmployee.getJobPosition()+ ' ' +
-						software.getSoftwareName()
-						);
 			}
 			
 		});

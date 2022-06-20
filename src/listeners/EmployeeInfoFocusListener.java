@@ -31,51 +31,7 @@ public abstract class EmployeeInfoFocusListener implements FocusListener {
 			}
 			
 		}
-		
-		
-//		//POLJE FIRST NAME JE OBAVEZNO ZA UNOS
-//		if (txtJField.getName().equals("txtFirstName")) {
-//			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Enter First name")) {
-//				txtJField.setText("Enter First name");
-//				txtJField.requestFocus();
-//				txtJField.setForeground(Color.RED);
-//			}else {
-//				txtJField.setForeground(Color.BLACK);
-//			}
-//			
-//		}
-		
-		
-		
-		//POLJE DATE OF BIRTH JE OBAVEZNO ZA UNOS
-//		if (txtJField.getName().equals("txtDateOfBirth")) {
-//			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Enter Date of birth")) {
-//				txtJField.setText("Enter Date of Birth");
-//				txtJField.requestFocus();
-//				txtJField.setForeground(Color.RED);
-//			}else {
-//				txtJField.setForeground(Color.BLACK);
-//			}
-//			
-//		}
-		
-		
-		
-		
-//		//POLJE JMBG JE OBAVEZNO ZA UNOS
-//		if (txtJField.getName().equals("txtJMBG")) {
-//			if (txtJField.getText().trim().equals("")|| txtJField.getText().trim().equals("Enter JMBG")) {
-//				txtJField.setText("Enter JMBG");
-//				txtJField.requestFocus();
-//				txtJField.setForeground(Color.RED);
-//			}else {
-//				txtJField.setForeground(Color.BLACK);
-//			}
-//			
-//		}
-		
-		
-		
+	
 	}
 
 }

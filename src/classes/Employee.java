@@ -11,14 +11,19 @@ private String dateOfBirth;
 private String email;
 private String jobPosition;
 private long id;
+private String address;
+private String software;
 
-public Employee(long id, String name, String surname, String jmbg, String dateOfBirth, String email) {
+public Employee(long id, String name, String surname, String jmbg, String dateOfBirth, String email, String address, String jobPosition, String software) {
 	this.name = name;
 	this.surname = surname;
 	this.jmbg = jmbg;
 	this.dateOfBirth = dateOfBirth;
 	this.email = email;
 	this.id = id;
+	this.jobPosition = jobPosition;
+	this.address = address;
+	this.software = software;
 }
 
 public Employee(String jobPosition) {
@@ -38,6 +43,22 @@ public Employee(String jobPosition) {
 public Employee(){}
 
 //metode
+public String getSoftware() {
+	return software;
+}
+
+public void setSoftware(String software) {
+	this.software = software;
+}
+
+public String getAddress() {
+	return address;
+}
+
+public void setAddress(String address) {
+	this.address = address;
+}
+
 public long getId() {
 	return id;
 }
