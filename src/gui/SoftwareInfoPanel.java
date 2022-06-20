@@ -398,6 +398,16 @@ public class SoftwareInfoPanel extends JPanel {
 					}
 				});
 		
+         btnOK.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// zatvara prozor klikom na cancel
+						JComponent comp = (JComponent) e.getSource();
+						  Window win = SwingUtilities.getWindowAncestor(comp);
+						  win.dispose();
+					}
+				});
 		
 		Box boxSoftwareInfo=Box.createVerticalBox();
 		boxSoftwareInfo.add(panSoftName);

@@ -244,21 +244,6 @@ public class EmployeeInfoPanel extends JPanel {
 				JComponent comp = (JComponent) e.getSource();
 				  Window win = SwingUtilities.getWindowAncestor(comp);
 				  win.dispose();
-				  
-				  String def = "";
-					txtLastName.setText(def);
-					txtFirstName.setText(def);
-					txtDateOfBirth.setText(def);
-					txtJMBG.setText(def);
-					txtAdress.setText(def);
-					txtEmail.setText(def);
-					//TableEm.setText(def);
-					checkBox1.setSelected(false);
-					checkBox2.setSelected(false);
-					checkBox3.setSelected(false);
-					checkBox4.setSelected(false);
-					checkBox5.setSelected(false);
-					cBox.setSelectedIndex(0);
 			}
 		});
 		
@@ -266,47 +251,9 @@ public class EmployeeInfoPanel extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				employeeeEmployee = new Employee();
-				//nameArray.add(employeeeEmployee.getName());
-				//surnameArray.add(employeeeEmployee.getSurname());
-				//dobArray.add(employeeeEmployee.getDateOfBirth());
-				//jmbgArray.add(employeeeEmployee.getJmbg());
-				//emailArray.add(employeeeEmployee.getEmail());
-				
-				adress = new Adress(txtAdress.getText()); //namesti da se uzima pre razmaka
-				//addressArray.add(adress.getFullAddress()); 
-				
-				
-				jobPosEmployee = new Employee((String)cBox.getSelectedItem()); //za biranje posla
-				//jobPosArray.add(jobPosEmployee.getJobPosition());
-				
-				
-				if (checkBox1.isSelected()) {//za biranje softvera
-					software = new Software("3ds Max");
-					//softwareArray.add(software.getSoftwareName());
-				}
-				
-				else if (checkBox2.isSelected()) {
-					software = new Software("Maya");
-					//softwareArray.add(software.getSoftwareName());
-				}
-				
-				else if (checkBox3.isSelected()) {
-					software = new Software("Blender");
-					//softwareArray.add(software.getSoftwareName());
-				}
-				
-				else if (checkBox4.isSelected()) {
-					software = new Software("ZBrush");
-					//softwareArray.add(software.getSoftwareName());
-				}
-				
-				else if (checkBox5.isSelected()) {
-					software = new Software("Photoshop");
-					//softwareArray.add(software.getSoftwareName());
-				}
-				
-				//setListEmployee(employeeeEmployee);
+				JComponent comp = (JComponent) e.getSource();
+				  Window win = SwingUtilities.getWindowAncestor(comp);
+				  win.dispose();
 				
 			}
 			
