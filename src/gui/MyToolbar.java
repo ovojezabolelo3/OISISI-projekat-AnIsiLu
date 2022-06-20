@@ -77,12 +77,12 @@ public class MyToolbar extends JToolBar {
 			
 			ChooseDialog.setVisible(true);
 			
-			JButton btnEmp = new JButton("Employee");
+			JButton btnEmp = new JButton("Employee",new ImageIcon("images/icons8-add-user-male-24.png"));
 			btnEmp.setPreferredSize(dimensionButton);
 			btnEmp.setBackground(new Color(121,121,121));
 			btnEmp.setBorder(new LineBorder(new Color(166,166,166)));
 			
-			JButton btnSoft = new JButton("Software");
+			JButton btnSoft = new JButton("Software",new ImageIcon("images/icons8-google-code-24.png"));
 			btnSoft.setPreferredSize(dimensionButton);
 			btnSoft.setBackground(new Color(121,121,121));
 			btnSoft.setBorder(new LineBorder(new Color(166,166,166)));
@@ -94,11 +94,15 @@ public class MyToolbar extends JToolBar {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					ChooseDialog.dispose();
+					//JComponent comp = (JComponent) e.getSource();
+		            //Window win = SwingUtilities.getWindowAncestor(comp);
+					
 					AddEmployeeDialog addingEmployeeDialog=new AddEmployeeDialog(null, "Add a new employee", true);
 					addingEmployeeDialog.setVisible(true);
-					JComponent comp = (JComponent) e.getSource();
-		            Window win = SwingUtilities.getWindowAncestor(comp);
-		            win.dispose();
+			
+					
+					
 
 				}
 				
@@ -108,12 +112,9 @@ public class MyToolbar extends JToolBar {
 				//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
+					ChooseDialog.dispose();
 					AddSoftwareDialog addingSoftwareDialog=new AddSoftwareDialog(null, "Add a new software", true);
 					addingSoftwareDialog.setVisible(true);
-					JComponent comp = (JComponent) e.getSource();
-		            Window win = SwingUtilities.getWindowAncestor(comp);
-		            win.dispose();
 				}
 			});
 			
@@ -137,6 +138,60 @@ public class MyToolbar extends JToolBar {
 			}
 			
 			
+		});
+		
+		btnEdit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			JDialog ChooseDialog = new JDialog();
+			ChooseDialog.setTitle("What do you want to add?");
+			ChooseDialog.setSize(350,100);
+			ChooseDialog.setLocationRelativeTo(ChooseDialog);
+			ChooseDialog.setResizable(false);
+			
+			Dimension dimensionButton = new Dimension(150, 55);
+			JPanel ChoosePanel=new JPanel();
+			ChoosePanel.setBackground(new Color(61,61,61));
+			ChooseDialog.add(ChoosePanel);
+			
+			ChooseDialog.setVisible(true);
+			
+			JButton btnEmp = new JButton("Employee",new ImageIcon("images/icons8-add-user-male-24.png"));
+			btnEmp.setPreferredSize(dimensionButton);
+			btnEmp.setBackground(new Color(121,121,121));
+			btnEmp.setBorder(new LineBorder(new Color(166,166,166)));
+			
+			JButton btnSoft = new JButton("Software",new ImageIcon("images/icons8-google-code-24.png"));
+			btnSoft.setPreferredSize(dimensionButton);
+			btnSoft.setBackground(new Color(121,121,121));
+			btnSoft.setBorder(new LineBorder(new Color(166,166,166)));
+			
+			ChoosePanel.add(btnEmp);
+			ChoosePanel.add(btnSoft);
+			
+			btnEmp.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					ChooseDialog.dispose();
+					AddEmployeeDialog addingEmployeeDialog=new AddEmployeeDialog(null, "Add a new employee", true);
+					addingEmployeeDialog.setVisible(true);
+				}
+
+			});
+			
+			btnSoft.addActionListener(new ActionListener() {
+				//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					ChooseDialog.dispose();
+					AddSoftwareDialog addingSoftwareDialog=new AddSoftwareDialog(null, "Add a new software", true);
+					addingSoftwareDialog.setVisible(true);
+				}
+			});
+			
+			}
 		});
 		
 		
