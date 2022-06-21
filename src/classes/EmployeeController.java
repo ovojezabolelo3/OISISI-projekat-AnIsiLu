@@ -20,7 +20,7 @@ private static EmployeeController instance = null;
         // izmena modela
         BazaEmployee.getInstance().addEmployee("Isidora","Nikolic","53453453542","1.3.2000","isanfnsdfn","jos pit 88","rigg","maya");
          //azuriranje prikaza
-        MainGUIframe.getInstance().azurirajPrikaz("DODAT", -1);
+        MainGUIframe.getInstance().RefreshView("DODAT", -1);
     }
 
     public void deleteEmployeea(int rowSelectedIndex) {
@@ -31,7 +31,7 @@ private static EmployeeController instance = null;
         Employee employee = BazaEmployee.getInstance().getRow(rowSelectedIndex);
         BazaEmployee.getInstance().deleteEmployeea(employee.getId());
         // azuriranje prikaza
-        MainGUIframe.getInstance().azurirajPrikaz("UKLONJEN", rowSelectedIndex);
+        MainGUIframe.getInstance().RefreshView("UKLONJEN", rowSelectedIndex);
     }
 
     public void editEmployeea(int rowSelectedIndex) {
@@ -43,7 +43,7 @@ private static EmployeeController instance = null;
         BazaEmployee.getInstance().editEmployeea(employee.getId(), "Luna","Cvet","555","1.3.2700","lunacv","cara laz 68","rigg", "max");
 
         // azuriranje prikaza
-        MainGUIframe.getInstance().azurirajPrikaz(null, -1);
+        MainGUIframe.getInstance().RefreshView(null, -1);
     }
 
 

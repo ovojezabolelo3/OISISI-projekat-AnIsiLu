@@ -89,10 +89,10 @@ public class MainGUIframe extends JFrame {
 		PanelSoft=new JPanel();
 		add(PanelSoft, BorderLayout.CENTER);
 		
-		inicijalizujAkcije();
-		prikaziTabeluIgraca();
-		prikaziTabeluIgraca2();
-		inicijalizujAkcije2();
+		InitializeAction();
+		ShowTabelEmp();
+		ShowTabelSoft();
+		InitializeAction2();
 		
 ///////////// Tabovi /////////////
 		
@@ -120,7 +120,7 @@ public class MainGUIframe extends JFrame {
 	
 	//dodato
 	
-	public void azurirajPrikaz(String akcija, int vrednost) {
+	public void RefreshView(String action, int value) {
 		AbstractTableModelEmployee model = (AbstractTableModelEmployee) EmTable.getModel();
 		
 		// azuriranje modela tabele, kao i njenog prikaza
@@ -128,7 +128,7 @@ public class MainGUIframe extends JFrame {
 		
 		validate();
 	}
-	public void azurirajPrikaz2(String akcija, int vrednost) {
+	public void RefreshView2(String action, int value) {
 	
 		AbstractTableModelSoftware model1 = (AbstractTableModelSoftware) SoftTable.getModel();
 		// azuriranje modela tabele, kao i njenog prikaza
@@ -137,7 +137,7 @@ public class MainGUIframe extends JFrame {
 		validate();
 	}
 
-	private void inicijalizujAkcije() {
+	private void InitializeAction() {
 		JPanel panelTop = new JPanel();
 		JButton btnDodaj = new JButton("AddEmpl");
 		JButton btnIzbrisi = new JButton("DeleteEmpl");
@@ -176,7 +176,7 @@ public class MainGUIframe extends JFrame {
 		});
 	}
 	
-	private void inicijalizujAkcije2() {
+	private void InitializeAction2() {
 		JPanel panelTop = new JPanel();
 		JButton btnDodaj = new JButton("AddSoft");
 		JButton btnIzbrisi = new JButton("DeleteSoft");
@@ -215,22 +215,22 @@ public class MainGUIframe extends JFrame {
 		});
 	}
 
-	private void prikaziTabeluIgraca() {
+	private void ShowTabelEmp() {
 		EmTable = new EmployeeJTable();
 
 		JScrollPane scrollPane = new JScrollPane(EmTable);
 		add(scrollPane, BorderLayout.CENTER);
 
-		this.azurirajPrikaz(null, -1);
+		this.RefreshView(null, -1);
 	}
 	
-	private void prikaziTabeluIgraca2() {
+	private void ShowTabelSoft() {
 		SoftTable = new SoftwareJTable();
 
 		JScrollPane scrollPane = new JScrollPane(SoftTable);
 		add(scrollPane, BorderLayout.CENTER);
 
-		this.azurirajPrikaz2(null, -1);
+		this.RefreshView2(null, -1);
 	}
 
 }
