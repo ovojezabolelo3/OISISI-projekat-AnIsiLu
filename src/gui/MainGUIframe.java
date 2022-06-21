@@ -29,7 +29,6 @@ import tables.SoftwareJTable;
 
 public class MainGUIframe extends JFrame {
 	
-
 	private static MainGUIframe instance = null;
 
 	public static MainGUIframe getInstance() {
@@ -43,9 +42,6 @@ public class MainGUIframe extends JFrame {
 	private JTable SoftTable;
 	JPanel PanelSoft;
 
-
-	
-	
 	private static final long serialVersionUID = -8026416994513756565L;
 
 	public MainGUIframe() {
@@ -94,28 +90,17 @@ public class MainGUIframe extends JFrame {
 		InitializeAction2();
 		
 ///////////// Tabovi /////////////
-		
-	
 	JTabbedPane tabs = new JTabbedPane();
-	
-	
-	
 	
 	tabs.addTab("Employees", EmTable);
 	
-	
 	tabs.addTab("Software",SoftTable);
 	
-
 	tabs.setBackground(Color.GRAY);
-
 
 	add(tabs);
 		
-		
 	}
-	
-	
 	
 	
 	public void RefreshView(String action, int value) {

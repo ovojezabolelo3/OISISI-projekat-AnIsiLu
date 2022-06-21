@@ -1,7 +1,5 @@
 package gui;
 
-
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -18,7 +16,6 @@ public class SoftwareInfoPanel extends JPanel {
 		Dimension dimension=new Dimension(120,20);
 		
 		///////PANEL ZA IME SOFTVERA//////////////////
-		
 		JPanel panSoftName=new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panSoftName.setBackground(bg_color);
 		JLabel lblSoftName=new JLabel("Software:");
@@ -128,7 +125,6 @@ public class SoftwareInfoPanel extends JPanel {
 		GridLayout gridLayout=new GridLayout();
 		panBrushTab.setLayout(gridLayout);
 		
-		
 		JPanel panBrushName=new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panBrushName.setBackground(Color.DARK_GRAY);
 		JLabel lblBrushName=new JLabel("Brush name:");
@@ -139,9 +135,6 @@ public class SoftwareInfoPanel extends JPanel {
 		
 		panBrushName.add(lblBrushName);
 		panBrushName.add(txtBrushName);
-		
-		
-		
 		
 		JPanel panBrushUsage=new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panBrushUsage.setBackground(Color.DARK_GRAY);
@@ -355,11 +348,8 @@ public class SoftwareInfoPanel extends JPanel {
 		boxRenderTab.add(panRenderCam);
 		boxRenderTab.add(panRenderBtns);
 		
-		
-		
 		tabBrush.add("Brush",panBrushTab);
 		tabBrush.add("Render",panRenderTab);
-		
 		
 		//-----OK/CANCLE BUTTONS------//
 		JPanel panOkCancel=new JPanel(new FlowLayout(FlowLayout.CENTER));

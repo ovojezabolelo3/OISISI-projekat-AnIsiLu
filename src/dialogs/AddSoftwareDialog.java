@@ -5,8 +5,6 @@ import javax.swing.JDialog;
 import java.awt.Color;
 import gui.SoftwareInfoPanel;
 
-
-
 public class AddSoftwareDialog extends JDialog {
 	
 	private static final long serialVersionUID = 3591599721565020284L;
@@ -20,10 +18,7 @@ public class AddSoftwareDialog extends JDialog {
 		SoftwareInfoPanel addSoftwareDialogPanel=new SoftwareInfoPanel();
 		addSoftwareDialogPanel.setBackground(new Color(61,61,61));
 		this.add(addSoftwareDialogPanel);
-		
-
-		
-		
+	
 	}
 
 }

@@ -65,12 +65,12 @@ public class MyToolbar extends JToolBar {
 			JButton btnEmp = new JButton("Employee",new ImageIcon("images/icons8-add-user-male-24.png"));
 			btnEmp.setPreferredSize(dimensionButton);
 			btnEmp.setBackground(new Color(121,121,121));
-			btnEmp.setBorder(new LineBorder(new Color(166,166,166)));
+			
 			
 			JButton btnSoft = new JButton("Software",new ImageIcon("images/icons8-google-code-24.png"));
 			btnSoft.setPreferredSize(dimensionButton);
 			btnSoft.setBackground(new Color(121,121,121));
-			btnSoft.setBorder(new LineBorder(new Color(166,166,166)));
+			
 			
 			ChoosePanel.add(btnEmp);
 			ChoosePanel.add(btnSoft);

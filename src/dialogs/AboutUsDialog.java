@@ -12,10 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-
-
-
-
 public class AboutUsDialog extends JDialog{
 	private static final long serialVersionUID = 3591599721565020284L;
 	
@@ -28,7 +24,6 @@ public class AboutUsDialog extends JDialog{
 		AboutUsPanel Help=new AboutUsPanel();
 		Help.setBackground(new Color(61,61,61));
 		this.add(Help);
-		
 		
 	}
 
@@ -84,9 +79,6 @@ class AboutUsPanel extends JPanel {
 
 		sendhelp.setForeground(Color.white);
 		sendhelp.setPreferredSize(dimension);
-		
-		
-		
 		
 	}
 	}

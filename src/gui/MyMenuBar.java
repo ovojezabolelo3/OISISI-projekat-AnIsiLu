@@ -12,8 +12,6 @@ import dialogs.AboutUsDialog;
 import dialogs.AddEmployeeDialog;
 import dialogs.AddSoftwareDialog;
 
-
-
 public class MyMenuBar extends JMenuBar{
 	
 	private static final long serialVersionUID = -7863806568418316202L;
@@ -32,7 +30,6 @@ public class MyMenuBar extends JMenuBar{
 		uiMenuBar.put("Menu.selectionForeground", Color.WHITE);
 		uiMenuBar.put("MenuBar.selectionBackground", new Color(38,38,38));
 		uiMenuBar.put("MenuBar.selectionForeground", Color.WHITE);
-		
 		
 		
 		JMenu file=new JMenu("File");
@@ -59,6 +56,7 @@ public class MyMenuBar extends JMenuBar{
 		
 		JMenuItem fileNewSoftware=new JMenuItem("Software", new ImageIcon("images/icons8-google-code-24.png"));
 		fileNewSoftware.setForeground(Color.WHITE);
+		
 		fileNewSoftware.addActionListener(new ActionListener() {
 			
 			@Override
@@ -82,6 +80,7 @@ public class MyMenuBar extends JMenuBar{
 		add(fileOpen);
 		JMenuItem fileOpenEmployee=new JMenuItem("Employee", new ImageIcon("images/icons8-add-user-male-24.png"));
 		fileOpenEmployee.setForeground(Color.white);
+		
 		fileOpenEmployee.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -89,6 +88,7 @@ public class MyMenuBar extends JMenuBar{
 				addingEmployeeDialog.setVisible(true);
 			}
 		});
+		
 		JMenuItem fileOpenSoftware=new JMenuItem("Software", new ImageIcon("images/icons8-google-code-24.png"));
 		fileOpenSoftware.setForeground(Color.white);
 		fileOpenSoftware.addActionListener(new ActionListener() {
@@ -118,7 +118,6 @@ public class MyMenuBar extends JMenuBar{
 		//https://stackoverflow.com/questions/26762324/swing-how-to-close-jpanel-programmatically
 		
 		fileClose.addActionListener(new ActionListener() {
-					
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						//zatvara celu aplikaciju 
@@ -142,8 +141,8 @@ public class MyMenuBar extends JMenuBar{
 		help.setForeground(Color.WHITE);
 		JMenuItem helpAbout = new JMenuItem("About", new ImageIcon("images/icons8-about-24.png"));
 		helpAbout.setForeground(Color.WHITE);
+		
 		helpAbout.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				AboutUsDialog fileOpenAbout=new AboutUsDialog(null, "About Us", true);

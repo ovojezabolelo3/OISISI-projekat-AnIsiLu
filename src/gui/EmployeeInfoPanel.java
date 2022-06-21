@@ -53,7 +53,6 @@ public class EmployeeInfoPanel extends JPanel {
 	Employee jobPosEmployee;
 	
 	
-	
 	private Color bg_color=new Color(61,61,61);
 	
 	public EmployeeInfoPanel() {
@@ -78,13 +77,8 @@ public class EmployeeInfoPanel extends JPanel {
 		txtLastName.addFocusListener(focusListener);
 
 		
-		
-
-		
-
 		panLastName.add(lblLastName,BorderLayout.WEST);
 		panLastName.add(txtLastName,BorderLayout.WEST);
-		
 		
 		
 		JPanel panFirstName = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -99,8 +93,6 @@ public class EmployeeInfoPanel extends JPanel {
 		txtFirstName.addFocusListener(focusListener);
 		txtFirstName.setPreferredSize(dimension);
 
-		
-		
 		panFirstName.add(lblFirstName);
 		panFirstName.add(txtFirstName);
 
@@ -194,12 +186,9 @@ public class EmployeeInfoPanel extends JPanel {
 		add(boxEmployeeInfo, BorderLayout.CENTER);
 		
 
-		
 		JPanel panOKCancel=new JPanel();
 		panOKCancel.setBackground(Color.gray);
 		panOKCancel.setPreferredSize(new Dimension(30,60));
-		
-		
 		
 		btnOK=new JButton("OK");
 		
