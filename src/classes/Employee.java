@@ -26,6 +26,16 @@ public Employee(long id, String name, String surname, String jmbg, String dateOf
 	this.software = software;
 }
 
+public Employee(String name, String surname, String jmbg, String dateOfBirth, String email) {
+
+    this.name = name;
+    this.surname = surname;
+    this.jmbg = jmbg;
+    this.dateOfBirth = dateOfBirth;
+    this.email = email;
+
+}
+
 public Employee(String jobPosition) {
 	this.jobPosition = jobPosition;
 	

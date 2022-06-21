@@ -29,9 +29,13 @@ import dialogs.AboutUsDialog;
 import dialogs.AddEmployeeDialog;
 import dialogs.AddSoftwareDialog;
 import listeners.ToolbarMouseListener;
+import tables.EmployeeJTable;
+import tables.SoftwareJTable;
 
 public class MyToolbar extends JToolBar {
 	
+	//public EmployeeJTable TableEm = new EmployeeJTable();
+	//public SoftwareJTable TableSoft = new SoftwareJTable();
 	private static final long serialVersionUID = 1307178798190736592L;
 	
 	public MyToolbar() {
@@ -183,7 +187,7 @@ public class MyToolbar extends JToolBar {
 			});
 			
 			btnSoft.addActionListener(new ActionListener() {
-				//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
+				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					ChooseDialog.dispose();
@@ -210,8 +214,20 @@ public class MyToolbar extends JToolBar {
 				
 			}
 			
-			
 		});
+		
+		/*btnDelete.addActionListener(new ActionListener() {
+			
+			@Override
+			 public void actionPerformed(ActionEvent e) {
+		        // check for selected row first
+		        if (TableEm.getSelectedRow() != -1) {
+		            // remove selected row from the model
+		        	TableEm.remove(TableEm.getSelectedRow());
+		        }
+		    }
+		});*/
+		
 	
 		add(btnCreate);
 		add(btnEdit);

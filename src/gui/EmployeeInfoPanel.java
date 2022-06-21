@@ -254,6 +254,44 @@ public class EmployeeInfoPanel extends JPanel {
 				JComponent comp = (JComponent) e.getSource();
 				  Window win = SwingUtilities.getWindowAncestor(comp);
 				  win.dispose();
+				  
+				  /*employeeeEmployee = new Employee(txtFirstName.getText(), txtLastName.getText(), txtJMBG.getText(), txtDateOfBirth.getText(), txtEmail.getText());
+
+	                adress = new Adress(txtAdress.getText()); //namesti da se uzima pre razmaka
+
+	                jobPosEmployee = new Employee((String)cBox.getSelectedItem()); //za biranje posla
+
+	                if (checkBox1.isSelected()) {//za biranje softvera
+	                    software = new Software("3ds Max");
+
+	                }
+
+	                else if (checkBox2.isSelected()) {
+	                    software = new Software("Maya");
+
+	                }
+
+	                else if (checkBox3.isSelected()) {
+	                    software = new Software("Blender");
+
+	                }
+
+	                else if (checkBox4.isSelected()) {
+	                    software = new Software("ZBrush");
+
+	                }
+
+	                else if (checkBox5.isSelected()) {
+	                    software = new Software("Photoshop");
+
+	                }
+
+	                TextOut textOut=new TextOut();
+	                add(textOut);
+	                textOut.setText(employeeeEmployee.getName() + ' ' + employeeeEmployee.getSurname() + ' '+ employeeeEmployee.getDateOfBirth()+
+	                        ' '+employeeeEmployee.getJmbg()+' '+employeeeEmployee.getEmail()+' '+adress.getFullAddress()+' '+
+	                        jobPosEmployee.getJobPosition()+' '+ software.getSoftwareName());
+	                textOut.setEditable(false);*/
 				
 			}
 			
