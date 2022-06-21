@@ -3,9 +3,8 @@ package baze;
 import java.util.ArrayList;
 import java.util.List;
 
-import classes.Adress;
 import classes.Employee;
-import classes.Software;
+
 
 public class BazaEmployee {
 	private static BazaEmployee instance = null;

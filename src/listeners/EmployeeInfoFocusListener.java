@@ -7,7 +7,7 @@ import java.awt.event.FocusListener;
 import javax.swing.JTextField;
 
 
-//Prijavljivao je gresku ukoliko se ne stavi da je abstract klasa----> proveri zasto?????
+
 public abstract class EmployeeInfoFocusListener implements FocusListener {
 	@Override
 	public void focusGained(FocusEvent arg0) {

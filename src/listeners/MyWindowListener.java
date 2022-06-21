@@ -1,12 +1,9 @@
 package listeners;
 
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -37,13 +34,7 @@ public class MyWindowListener implements WindowListener {
 		
 		int code=JOptionPane.showConfirmDialog(frame, "Are you sure you want to close application?","Close application?", JOptionPane.YES_NO_OPTION);
 		
-		
-		
-		//PROVERI PONOVO KAKO BI MOGLA DA SE PROMENI DIFOLTNA IKONICA NA PROZORU!!!!!!
-		//ImageIcon questionMarkIcon=new ImageIcon("images/icons8-hardworking-64.png");
-		
-		//frame.setIconImage(questionMarkIcon.getImage());
-		
+
 		if(code!=JOptionPane.YES_OPTION){
 			frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		} else {

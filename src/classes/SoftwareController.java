@@ -17,9 +17,7 @@ private static SoftwareController instance = null;
     private SoftwareController() {}
 
     public void addSoftware() {
-        // izmena modela
         BazaSoftware.getInstance().addSoftware("3ds Max","Turbosmooth","obj","IK solver","Small","Black" ,"Line art", "Twosided", "Teapot", "Orthographic");
-        // azuriranje prikaza
         MainGUIframe.getInstance().RefreshView2("DODAT", -1);
     }
 
@@ -27,10 +25,10 @@ private static SoftwareController instance = null;
         if (rowSelectedIndex < 0) {
             return;
         }
-        // izmena modela
+        
         Software Software = BazaSoftware.getInstance().getRow(rowSelectedIndex);
         BazaSoftware.getInstance().deleteSoftwarea(Software.getId());
-        // azuriranje prikaza
+        
         MainGUIframe.getInstance().RefreshView2("UKLONJEN", rowSelectedIndex);
     }
 
@@ -38,11 +36,11 @@ private static SoftwareController instance = null;
         if (rowSelectedIndex < 0) {
             return;
         }
-        // izmena modela
+       
         Software Software = BazaSoftware.getInstance().getRow(rowSelectedIndex);
         BazaSoftware.getInstance().editSoftwarea(Software.getId(), "3ds Max","Cloth","fbx","IK solver","Medium","White" ,"Line art","Blend", "Cone", "Perspective");
 
-        // azuriranje prikaza
+       
         MainGUIframe.getInstance().RefreshView2(null, -1);
     }
 

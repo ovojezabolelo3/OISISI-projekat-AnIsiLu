@@ -41,14 +41,7 @@ public Employee(String jobPosition) {
 	
 }
 
-//koristiti for i if za proveru jmbg-a kod unosa korisnika 
 
-//for(i=0;i<=BrZaposlenih;i++) {
-//	if(jmbgUnet==jmbgPostojeci) 
-//		ispisi gresku 
-//	}
-
-//napravi neku petlju da proverava da li su uneti brojevi/slova u polja kad se pravi novi zaposleni 
 
 public Employee(){}
 

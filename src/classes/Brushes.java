@@ -14,10 +14,6 @@ this.brushName = brushName;
 this.color = color;
 this.purpose = purpose;
 
-//boja ce biti namestena da se bira od ponudjenih
-//kod cetkice dozvoliti i brojeve jer moze
-//kod opisa ce biti ponudjeno najverovatnije ili ce se staviti da korisnik moze da ukuca to cemo jos videti
-
 }
 
 public Brushes(){}

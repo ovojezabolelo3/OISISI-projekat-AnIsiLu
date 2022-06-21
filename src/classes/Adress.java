@@ -2,16 +2,16 @@ package classes;
 
 import java.io.Serializable;
 
-public class Adress implements Serializable{ //koristi se da bi se cuvale informacije
+public class Adress implements Serializable{ 
 	
-	//promenljive
+	
 private String streetNumber;
 private String streetName;
 private String townName;
 private String fullAddress;
-//String contry;
 
-//konstruktori
+
+
 public Adress(String townName,String streetName , String streetNumber)
 	{
     this.townName = townName;

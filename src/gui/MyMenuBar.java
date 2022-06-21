@@ -1,25 +1,13 @@
 package gui;
 
-
-
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Menu;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.PublicKey;
-
-import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-
 import dialogs.AboutUsDialog;
 import dialogs.AddEmployeeDialog;
 import dialogs.AddSoftwareDialog;
@@ -31,7 +19,7 @@ public class MyMenuBar extends JMenuBar{
 	private static final long serialVersionUID = -7863806568418316202L;
 	
 	public MyMenuBar() {
-		//Izmene UI-a preko UIManager-a
+		
 		UIManager uiMenuBar=new UIManager();
 		uiMenuBar.put("MenuBar.background", new Color(61,61,61));
 		uiMenuBar.put("Menu.background", new Color(61,61,61));
@@ -48,15 +36,12 @@ public class MyMenuBar extends JMenuBar{
 		
 		
 		JMenu file=new JMenu("File");
-		file.setForeground(Color.WHITE);//boja teksta file u menibaru ce biti bela
+		file.setForeground(Color.WHITE);
 		
 		JMenu fileNew=new JMenu("New");
 		fileNew.setIcon(new ImageIcon("images/icons8-plus-+-24.png"));
 		fileNew.setForeground(Color.WHITE);
-		//dodavanje ActionListener-a///////////////////////
-		//fileNew.addActionListener(new MyActionListener1());
 		add(fileNew);
-		/////////////////////////////////////////////
 		
 		
 		JMenuItem fileNewEmployee=new JMenuItem("Employee", new ImageIcon("images/icons8-add-user-male-24.png"));
@@ -90,7 +75,7 @@ public class MyMenuBar extends JMenuBar{
 		fileNew.addSeparator();
 		fileNew.add(fileNewSoftware);
 		
-		/////NOVO
+
 		JMenu fileOpen=new JMenu("Open");
 		fileOpen.setIcon(new ImageIcon("images/icons8-opened-folder-24.png"));
 		fileOpen.setForeground(Color.white);
@@ -98,7 +83,6 @@ public class MyMenuBar extends JMenuBar{
 		JMenuItem fileOpenEmployee=new JMenuItem("Employee", new ImageIcon("images/icons8-add-user-male-24.png"));
 		fileOpenEmployee.setForeground(Color.white);
 		fileOpenEmployee.addActionListener(new ActionListener() {
-			//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				AddEmployeeDialog addingEmployeeDialog=new AddEmployeeDialog(null, "Add a new employee", true);
@@ -108,10 +92,8 @@ public class MyMenuBar extends JMenuBar{
 		JMenuItem fileOpenSoftware=new JMenuItem("Software", new ImageIcon("images/icons8-google-code-24.png"));
 		fileOpenSoftware.setForeground(Color.white);
 		fileOpenSoftware.addActionListener(new ActionListener() {
-			//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				AddSoftwareDialog addingSoftwareDialog=new AddSoftwareDialog(null, "Add a new software", true);
 				addingSoftwareDialog.setVisible(true);
 			}
@@ -123,8 +105,7 @@ public class MyMenuBar extends JMenuBar{
 		
 		
 		
-		//JMenuItem fileOpen=new JMenuItem("Open", new ImageIcon("images/icons8-opened-folder-24.png"));
-		//fileOpen.setForeground(Color.WHITE);
+		
 		JMenuItem fileClose=new JMenuItem("Close", new ImageIcon("images/icons8-unavailable-24.png"));
 		fileClose.setForeground(Color.WHITE);
 		
@@ -165,7 +146,6 @@ public class MyMenuBar extends JMenuBar{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				AboutUsDialog fileOpenAbout=new AboutUsDialog(null, "About Us", true);
 				fileOpenAbout.setVisible(true);
 			}

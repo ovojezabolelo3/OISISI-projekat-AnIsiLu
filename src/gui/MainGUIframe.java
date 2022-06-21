@@ -29,7 +29,7 @@ import tables.SoftwareJTable;
 
 public class MainGUIframe extends JFrame {
 	
-//dodato
+
 	private static MainGUIframe instance = null;
 
 	public static MainGUIframe getInstance() {
@@ -42,10 +42,9 @@ public class MainGUIframe extends JFrame {
 	private JTable EmTable;
 	private JTable SoftTable;
 	JPanel PanelSoft;
-//dodato
 
-	private EmployeeJTable TableEm = new EmployeeJTable();
-	private SoftwareJTable TableSoft = new SoftwareJTable();
+
+	
 	
 	private static final long serialVersionUID = -8026416994513756565L;
 
@@ -56,20 +55,20 @@ public class MainGUIframe extends JFrame {
 		int screenHeight = screenSize.height;
 		int screenWidth = screenSize.width;
 		setResizable(false);
-		// Podesavamo dimenzije prozora na 3/4 sirine i visine ekrana
+		
 		setSize(3 * screenWidth / 4, 3 * screenHeight / 4);
-		// Dodajemo ikonu
-		Image img = kit.getImage("images/icons8-battle.net-64.png");
+		
+		Image img = kit.getImage("images/icons8-hang-48.png");
 		setIconImage(img);
-		// Podesavamo naslov
+		
 		setTitle("Manager editor");
-		// Postavljamo akciju pri zatvaranju prozora
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		//Dodavanje Window Listenera koji proverava da li korisnik sigurno zeli da zatvori aplikaciju
+		
 		addWindowListener(new MyWindowListener());
 		
-		setLocationRelativeTo(null); // ovime je prozor po pokretanju aplikacije postavljen na centar ekrana
+		setLocationRelativeTo(null); 
 
 		// Meni bar
 		JMenuBar menuBar = new MyMenuBar();
@@ -96,18 +95,17 @@ public class MainGUIframe extends JFrame {
 		
 ///////////// Tabovi /////////////
 		
-	//UIManager.put("TabbedPane.selected", Color.LIGHT_GRAY);
+	
 	JTabbedPane tabs = new JTabbedPane();
-	//JPanel PanelEmp=new JPanel();
-	JPanel PanelSoft=new JPanel();
-	//PanelEmp.add(TableEm);
-	//PanelSoft.add(TableSoft);
+	
+	
+	
 	
 	tabs.addTab("Employees", EmTable);
 	
 	
 	tabs.addTab("Software",SoftTable);
-	//tabs.addTab("Software",PanelSoft);
+	
 
 	tabs.setBackground(Color.GRAY);
 
@@ -118,12 +116,12 @@ public class MainGUIframe extends JFrame {
 	}
 	
 	
-	//dodato
+	
 	
 	public void RefreshView(String action, int value) {
 		AbstractTableModelEmployee model = (AbstractTableModelEmployee) EmTable.getModel();
 		
-		// azuriranje modela tabele, kao i njenog prikaza
+		
 		model.fireTableDataChanged();
 		
 		validate();
@@ -131,7 +129,7 @@ public class MainGUIframe extends JFrame {
 	public void RefreshView2(String action, int value) {
 	
 		AbstractTableModelSoftware model1 = (AbstractTableModelSoftware) SoftTable.getModel();
-		// azuriranje modela tabele, kao i njenog prikaza
+		
 	
 		model1.fireTableDataChanged();
 		validate();

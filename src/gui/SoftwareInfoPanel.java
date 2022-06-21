@@ -1,15 +1,11 @@
 package gui;
 
-import javax.security.auth.login.FailedLoginException;
-import javax.sound.sampled.BooleanControl;
 
-//ovo treba zbog omogucavanja dodavanja fajla korisniku
+
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-///////////////////////////////////////////////////////
+
 
 public class SoftwareInfoPanel extends JPanel {
 	
@@ -20,7 +16,6 @@ public class SoftwareInfoPanel extends JPanel {
 		setBackground(bg_color);
 		
 		Dimension dimension=new Dimension(120,20);
-		//Ovde treba dodati ono za focus listener, ako cem ga uopste dodavati
 		
 		///////PANEL ZA IME SOFTVERA//////////////////
 		
@@ -31,8 +26,6 @@ public class SoftwareInfoPanel extends JPanel {
 		lblSoftName.setPreferredSize(dimension);
 		JTextField txtSoftName=new JTextField(50);
 		txtSoftName.setPreferredSize(dimension);
-		//txtSoftName.setBackground(Color.gray); <- ovo menjati ako dodamo focus listener
-		//ovde treba onda da se doda focus listener na txtSoftName
 		
 		panSoftName.add(lblSoftName,BorderLayout.WEST);
 		panSoftName.add(txtSoftName,BorderLayout.WEST);
@@ -128,8 +121,6 @@ public class SoftwareInfoPanel extends JPanel {
 		panSoftAnimTools.add(chBAT6);
 		
 		////////PANEL ZA TABOVE//////////
-		//JPanel panSoftTabs=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		//panSoftTabs.setBackground(bg_color);
 		//---------TABOVI----------------//
 		JTabbedPane tabBrush=new JTabbedPane();
 		//prvi Tab Item
@@ -166,7 +157,7 @@ public class SoftwareInfoPanel extends JPanel {
 		//----PROVERA ODABRANE BOJE CETKICE------//////
 		JLabel lblBrushColor=new JLabel("BRUSH COLOR");
 		lblBrushColor.setBackground(Color.darkGray);
-		lblBrushColor.setOpaque(true); //ovo se dodaje kako bi mogla da se vidi pozadina labele
+		lblBrushColor.setOpaque(true); 
 		lblBrushColor.setFont(new Font("Papyrus", Font.BOLD,25));
 		
 		panBrushName.add(lblBrushColor);
@@ -197,12 +188,13 @@ public class SoftwareInfoPanel extends JPanel {
 			}
 		});
 		
+		//https://www.youtube.com/watch?v=zEw8xObSWNA --->JColorChooser
+		
 		/////////LISTENER ZA BIRANJE BOJE///////////////////
 		btnAddBrushColor.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (e.getSource()==btnAddBrushColor) {
 					JColorChooser pickColor= new JColorChooser();
 					
@@ -247,13 +239,7 @@ public class SoftwareInfoPanel extends JPanel {
 		boxBrushTab.add(panBrushBtns);
 		boxBrushTab.add(panBrushBtnSaveDelete);
 		
-		///Ovaj color chooser cu dodati da se otvara u novom prozoru////
-		//JColorChooser colorsChooser=new JColorChooser();
-		//colorsChooser.setBackground(bg_color);
-		//panBrushTab.add(colorsChooser);
-		
-		
-		
+
 		//drugiTab Item
 		JPanel panRenderTab=new JPanel();
 		GridLayout gridLayout2=new GridLayout();
@@ -373,12 +359,12 @@ public class SoftwareInfoPanel extends JPanel {
 		
 		tabBrush.add("Brush",panBrushTab);
 		tabBrush.add("Render",panRenderTab);
-		//panSoftTabs.add(tabBrush);
+		
 		
 		//-----OK/CANCLE BUTTONS------//
 		JPanel panOkCancel=new JPanel(new FlowLayout(FlowLayout.CENTER));
 		panOkCancel.setBackground(bg_color);
-		//panOkCancel.setPreferredSize(new Dimension(30,60));
+	
 		
 		JButton btnOK=new JButton("OK");
 		JButton btnCancel=new JButton("Cancel");

@@ -1,50 +1,31 @@
 package gui;
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Image;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JDialog;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
 import dialogs.AboutUsDialog;
 import dialogs.AddEmployeeDialog;
 import dialogs.AddSoftwareDialog;
-import listeners.ToolbarMouseListener;
 import tables.EmployeeJTable;
 import tables.SoftwareJTable;
 
 public class MyToolbar extends JToolBar {
 	
-	//public EmployeeJTable TableEm = new EmployeeJTable();
-	//public SoftwareJTable TableSoft = new SoftwareJTable();
 	private static final long serialVersionUID = 1307178798190736592L;
 	
 	public MyToolbar() {
-		
-		//UIManager uiToolbar=new UIManager();
-		//uiToolbar.put("Toolbar.background", Color.DARK_GRAY);
-		
-		//uiToolbar.put("Button.background", new Color(51,51,51));
-		
 		
 		JButton btnCreate = new JButton("", new ImageIcon("images/icons8-plus-+-24.png"));
 		btnCreate.setBackground(new Color(61,61,61));
@@ -105,15 +86,11 @@ public class MyToolbar extends JToolBar {
 					AddEmployeeDialog addingEmployeeDialog=new AddEmployeeDialog(null, "Add a new employee", true);
 					addingEmployeeDialog.setVisible(true);
 			
-					
-					
-
 				}
 				
 			});
 			
 			btnSoft.addActionListener(new ActionListener() {
-				//TREBA DA SE OTVORI TAB SA ZAPOSLENIMA ILI SOFTVERIMA, ZNACI NE PROZOR NEGO BAS TAB PISE----->IZMENITI OVAJ LISTENER
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					ChooseDialog.dispose();
@@ -165,12 +142,11 @@ public class MyToolbar extends JToolBar {
 			JButton btnEmp = new JButton("Employee",new ImageIcon("images/icons8-add-user-male-24.png"));
 			btnEmp.setPreferredSize(dimensionButton);
 			btnEmp.setBackground(new Color(121,121,121));
-			//btnEmp.setBorder(new LineBorder(new Color(166,166,166)));
+			
 			
 			JButton btnSoft = new JButton("Software",new ImageIcon("images/icons8-google-code-24.png"));
 			btnSoft.setPreferredSize(dimensionButton);
 			btnSoft.setBackground(new Color(121,121,121));
-			//btnSoft.setBorder(new LineBorder(new Color(166,166,166)));
 			
 			ChoosePanel.add(btnEmp);
 			ChoosePanel.add(btnSoft);
